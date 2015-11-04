@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "SalesHunt": {
+      "applicationId": "qbibXMJS9hiWYw6bldwHCzCS4ZW3QT5AKe13Dl3x"
+    },
+    "_default": {
+      "link": "SalesHunt"
+    }
+  }
+}
