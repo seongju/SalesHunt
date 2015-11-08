@@ -2,9 +2,10 @@
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="item in items track by item.Item" href="#/tab/tracklist/{{item.Item}}">
-        <img ng-src="{{item.SmallImage[0].URL[0]}}">
+        <img ng-src="{{item.SmallImage[0].URL[0]}}" style="width: 100%;height: inherit;">
+        <h3>{{item.ItemAttributes[0].Brand[0]}}</h3>
         <p>{{item.ItemAttributes[0].Title[0]}}</p>
-        <p>Price: {{item.ListPrice[0].FormattedPrice[0]}}</p>
+        <h4>Price: {{item.ListPrice[0].FormattedPrice[0]}}</h3>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(item)">

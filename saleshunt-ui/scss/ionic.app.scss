@@ -1,19 +1,31 @@
-/*
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
+// Colors
+// -------------------------------
 
-For example, you might change some of the default colors:
+$light:                 #fff !default;
+$stable:                #f8f8f8 !default;
+$positive:              #4ea4be !default; //#4a87ee;
+$calm:                  #40A7CF !default; //#43cee6;
+$balanced:              #7ed321 !default; //#66cc33
+$energized:             #f0b840 !default;
+$assertive:             #ef4e3a !default;
+$royal:                 #8a6de9 !default;
+$dark:                  #444    !default;
+$shgray:                #9b9b9b !default;
+$shgreen:               #7ed321 !default;
 
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
+
+.shgray, a.shgray {
+  color: $shgray; }
+
+.shgray-bg {
+  background-color: $shgray; }
+
+.shgreen, a.shgreen {
+  color: $shgreen; }
+
+.shgreen-bg {
+  background-color: $shgreen; }
+
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -21,3 +33,20 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.item-limit-lines .item,
+.item-limit-lines .item-content,
+.item-limit-lines,
+.item-limit-lines h1,
+.item-limit-lines h2,
+.item-limit-lines h3,
+.item-limit-lines h4,
+.item-limit-lines h5,
+.item-limit-lines h6,
+.item-limit-lines p,
+.item-complex.item-limit-lines .item-content{
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 3em;
+    white-space: normal;
+}

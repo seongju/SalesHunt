@@ -1,19 +1,17 @@
 <ion-view view-title="Search">
-  <ion-content style="background-color:#33cd5f">
+  <ion-content class="stable-bg">
     <div class="list">
 
-      <div class="list list-inset">
+      
+      <div class="padding" style="position: relative;margin-top: 115px;">
+        <h1 style="text-align: center" class="shgreen">SalesHunt <i class="ion-pinpoint shgreen"></i> </h1>
+      </div>
+      <div class="list list-inset" >
         <form class="item item-input" ng-submit="submit()">
           <i class="icon ion-search placeholder-icon"></i>
           <input type="search" placeholder="Search" ng-model="search.term">
         </form>
       </div> 
-      <divc class="padding">
-        <h1 style="text-align: center" class="stable">SalesHunt</h1>
-        <h1 class="ion-pinpoint stable size-96" style="text-align: center; font-size: 96px"></h1>
-        <h2 style="text-align: center" class="stable">Search it. Track it. Cop it.</h2>
-
-      </div>
     </div>
   </ion-content>
 </ion-view>
