@@ -1,0 +1,629 @@
+angular.module('starter.services', [])
+
+.factory('TrackSvc', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var tracks = [];
+
+  return {
+    all: function() {
+      return tracks;
+    },
+    remove: function(item) {
+      tracks.splice(tracks.indexOf(item), 1);
+    },
+    add: function(item) {
+      var clone = JSON.parse(JSON.stringify(item));
+      
+      tracks.push(clone);
+    },
+    get: function(trackId) {
+      for (var i = 0; i < tracks.length; i++) {
+        if (tracks[i].Item === parseInt(trackId)) {
+          return tracks[i];
+        }
+      }
+      return null;
+    }
+  };
+})
+
+.factory('SearchSvc', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var search= {
+    term: ''
+  };
+  var items = [
+  {
+    Item: 0,
+    ASIN:
+    [ 'B00VSB1RZC' ],
+    ListPrice:
+    [ { Amount: [ '129900' ],
+        CurrencyCode: [ 'USD' ],
+        FormattedPrice: [ '$1,299.00' ] } ],
+    DetailPageURL:
+    [ 'http://www.amazon.com/Apple-MacBook-MK4M2LL-12-Inch-Display/dp/B00VSB1RZC%3Fpsc%3D1%26SubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00VSB1RZC' ],
+    SmallImage:
+    [ { URL: [ 'http://ecx.images-amazon.com/images/I/51YT7P31N-L._SL75_.jpg' ],
+        Height: [ [Object] ],
+        Width: [ [Object] ] } ],
+    MediumImage:
+    [ { URL: [ 'http://ecx.images-amazon.com/images/I/51YT7P31N-L._SL160_.jpg' ],
+        Height: [ [Object] ],
+        Width: [ [Object] ] } ],
+    LargeImage:
+    [ { URL: [ 'http://ecx.images-amazon.com/images/I/51YT7P31N-L.jpg' ],
+        Height: [ [Object] ],
+        Width: [ [Object] ] } ],
+    ItemAttributes:
+    [ { Binding: [ 'Personal Computers' ],
+        Brand: [ 'Apple' ],
+        Color: [ 'Gold' ],
+        EAN: [ '0690443768645' ],
+        EANList: [ [Object] ],
+        Feature:
+         [ '1.1 GHz Dual-Core Intel Core M Processor (Turbo Boost up to 2.4 GHz) with 4 MB shared L3 cache',
+           '8 GB of 1600 MHz LPDDR3 RAM; 256 GB PCIe-based onboard flash storage',
+           '12-Inch IPS LED-backlit Display; 2304-by-1440 Resolution',
+           'Intel HD Graphics 5300',
+           'OS X Yosemite; USB-C Port Only. PEASE NOTE: This MacBook has a single USB-C port (a new version of USB) which handles power and connectivity to all peripherals.  An accessory adapter can be purchased to connect standard USB devices to this MacBook.' ],
+        HardwarePlatform: [ 'Mac' ],
+        IsEligibleForTradeIn: [ '1' ],
+        ItemDimensions: [ [Object] ],
+        Label: [ 'Apple Computer' ],
+        Languages: [ [Object] ],
+        LegalDisclaimer: [ 'Manufacturers warranty applies' ],
+        ListPrice: [ [Object] ],
+        Manufacturer: [ 'Apple Computer' ],
+        Model: [ 'MK4M2LL/A' ],
+        MPN: [ 'MK4M2LL/A' ],
+        NumberOfItems: [ '1' ],
+        OperatingSystem: [ 'Mac OS X' ],
+        PackageDimensions: [ [Object] ],
+        PackageQuantity: [ '1' ],
+        PartNumber: [ 'MK4M2LL/A' ],
+        ProductGroup: [ 'Personal Computer' ],
+        ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+        Publisher: [ 'Apple Computer' ],
+        Size: [ '256 GB' ],
+        Studio: [ 'Apple Computer' ],
+        Title: [ 'Apple MacBook MK4M2LL/A 12-Inch Laptop with Retina Display (Gold, 256 GB)' ],
+        TradeInValue: [ [Object] ],
+        UPC: [ '888462323772' ],
+        UPCList: [ [Object] ] } ]
+    },
+    {
+      Item: 1,
+      ASIN:
+      [ 'B00VJ1P7TS' ],
+      ListPrice:
+      [ { Amount: [ '99999' ],
+          CurrencyCode: [ 'USD' ],
+          FormattedPrice: [ '$999.99' ] } ],
+      DetailPageURL:
+      [ 'http://www.amazon.com/Apple-MacBook-MJVE2LL-13-inch-Laptop/dp/B00VJ1P7TS%3FSubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00VJ1P7TS' ],
+      SmallImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/316sl-SZw1L._SL75_.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      MediumImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/316sl-SZw1L._SL160_.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      LargeImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/316sl-SZw1L.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      ItemAttributes:
+      [ { Binding: [ 'Personal Computers' ],
+          Brand: [ 'Apple' ],
+          Color: [ 'Silver' ],
+          EAN: [ '0736649735408' ],
+          EANList: [ [Object] ],
+          Feature:
+           [ '1.6 GHz Intel Core i5 (Broadwell) 4GB of 1600 MHz LPDDR3 RAM',
+             '128GB PCIe-Based Flash Storage Integrated Intel HD Graphics 6000',
+             '13.3" LED-Backlit Glossy Display 1440 x 900 Native Resolution',
+             '802.11ac Wi-Fi, Bluetooth 4.0 USB 3.0, Thunderbolt 2',
+             '720p FaceTime HD Camera, SDXC Card Slot Mac OS X 10.10 Yosemite' ],
+          HardwarePlatform: [ 'Mac' ],
+          IsEligibleForTradeIn: [ '1' ],
+          ItemDimensions: [ [Object] ],
+          Label: [ 'Apple Computer' ],
+          LegalDisclaimer: [ 'No returns' ],
+          ListPrice: [ [Object] ],
+          Manufacturer: [ 'Apple Computer' ],
+          Model: [ 'MJVE2LL/A' ],
+          MPN: [ 'MJVE2LL/A' ],
+          OperatingSystem: [ 'Mac OS X' ],
+          PackageDimensions: [ [Object] ],
+          PackageQuantity: [ '1' ],
+          PartNumber: [ 'MJVE2LL/A' ],
+          ProductGroup: [ 'Personal Computer' ],
+          ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+          Publisher: [ 'Apple Computer' ],
+          Size: [ '13 inch' ],
+          Studio: [ 'Apple Computer' ],
+          Title: [ 'Apple MacBook Air MJVE2LL/A 13-inch Laptop (1.6 GHz Intel Core i5,4GB RAM,128 GB SSD Hard Drive, Mac OS X)' ],
+          TradeInValue: [ [Object] ],
+          UPC: [ '736649735408' ],
+          UPCList: [ [Object] ] } ]
+    },
+    {
+      Item: 2,
+      ASIN:
+      [ 'B00VSB0CB2' ],
+      ListPrice:
+      [ { Amount: [ '129900' ],
+          CurrencyCode: [ 'USD' ],
+          FormattedPrice: [ '$1,299.00' ] } ],
+      DetailPageURL:
+      [ 'http://www.amazon.com/Apple-MacBook-MJY32LL-12-Inch-Display/dp/B00VSB0CB2%3Fpsc%3D1%26SubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00VSB0CB2' ],
+      SmallImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/51mcx0W5UrL._SL75_.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      MediumImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/51mcx0W5UrL._SL160_.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      LargeImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/51mcx0W5UrL.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      ItemAttributes:
+      [ { Binding: [ 'Personal Computers' ],
+          Brand: [ 'Apple' ],
+          Color: [ 'Space Gray' ],
+          EAN: [ '0888462181235' ],
+          EANList: [ [Object] ],
+          Feature:
+           [ '1.1 GHz Dual-Core Intel Core M Processor (Turbo Boost up to 2.4 GHz) with 4 MB shared L3 cache',
+             '8 GB of 1600 MHz LPDDR3 RAM; 256 GB PCIe-based onboard flash storage',
+             '12-Inch IPS LED-backlit Display; 2304-by-1440 Resolution',
+             'Intel HD Graphics 5300',
+             'OS X Yosemite; USB-C Port Only' ],
+          HardwarePlatform: [ 'Mac' ],
+          IsEligibleForTradeIn: [ '1' ],
+          ItemDimensions: [ [Object] ],
+          Label: [ 'Apple Computer' ],
+          Languages: [ [Object] ],
+          LegalDisclaimer: [ 'No returns on this item.' ],
+          ListPrice: [ [Object] ],
+          Manufacturer: [ 'Apple Computer' ],
+          Model: [ 'MJY32LL/A' ],
+          MPN: [ 'MJY32LL/A' ],
+          NumberOfItems: [ '1' ],
+          OperatingSystem: [ 'Mac OS X' ],
+          PackageDimensions: [ [Object] ],
+          PackageQuantity: [ '1' ],
+          PartNumber: [ 'MJY32LL/A' ],
+          ProductGroup: [ 'Personal Computer' ],
+          ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+          Publisher: [ 'Apple Computer' ],
+          Size: [ '256 GB' ],
+          Studio: [ 'Apple Computer' ],
+          Title: [ 'Apple MacBook MJY32LL/A 12-Inch Laptop with Retina Display (Space Gray, 256 GB)' ],
+          TradeInValue: [ [Object] ],
+          UPC: [ '888462181235' ],
+          UPCList: [ [Object] ] } ]
+    },
+    {
+      Item: 3,
+      ASIN:
+      [ 'B004FG793G' ],
+      ListPrice:
+      [ { Amount: [ '149900' ],
+          CurrencyCode: [ 'USD' ],
+          FormattedPrice: [ '$1,499.00' ] } ],
+      DetailPageURL:
+      [ 'http://www.amazon.com/Apple-13-Inch-MacBook-T7200-Processor/dp/B004FG793G%3FSubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004FG793G' ],
+      SmallImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/21rRNlbdbnL._SL75_.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      MediumImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/21rRNlbdbnL._SL160_.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      LargeImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/21rRNlbdbnL.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      ItemAttributes:
+      [ { Binding: [ 'Personal Computers' ],
+          Brand: [ 'Apple' ],
+          Color: [ 'white' ],
+          EAN: [ '0885909127887' ],
+          EANList: [ [Object] ],
+          Feature: [ '1 GB DDR2 RAM, 160 GB hard drive' ],
+          HardwarePlatform: [ 'Mac' ],
+          IsEligibleForTradeIn: [ '1' ],
+          ItemDimensions: [ [Object] ],
+          Label: [ 'Apple Computer' ],
+          LegalDisclaimer: [ '30 days return or refund.  Thank you' ],
+          ListPrice: [ [Object] ],
+          Manufacturer: [ 'Apple Computer' ],
+          Model: [ 'MA254LL/A' ],
+          MPN: [ 'MA254LL/A' ],
+          OperatingSystem: [ 'Apple Mac OS X 10.6 (Snow Leopard)' ],
+          PackageDimensions: [ [Object] ],
+          PackageQuantity: [ '1' ],
+          PartNumber: [ 'MA254LL/A' ],
+          ProductGroup: [ 'Personal Computer' ],
+          ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+          Publisher: [ 'Apple Computer' ],
+          Size: [ '13' ],
+          Studio: [ 'Apple Computer' ],
+          Title: [ 'Apple 13-Inch MacBook T7200 2.0 GHz Intel Core 2 Duo Processor, White' ],
+          TradeInValue: [ [Object] ],
+          UPC: [ '885909127887' ],
+          UPCList: [ [Object] ] } ]
+    },
+    {
+      Item: 4,
+      ASIN:
+      [ 'B001P05NKG' ],
+      ListPrice:
+      [ { Amount: [ '109900' ],
+          CurrencyCode: [ 'USD' ],
+          FormattedPrice: [ '$1,099.00' ] } ],
+      DetailPageURL:
+      [ 'http://www.amazon.com/Apple-MacBook-MB990LL-13-3-Inch-Laptop/dp/B001P05NKG%3Fpsc%3D1%26SubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001P05NKG' ],
+      SmallImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/51zsbCWiufL._SL75_.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      MediumImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/51zsbCWiufL._SL160_.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      LargeImage:
+      [ { URL: [ 'http://ecx.images-amazon.com/images/I/51zsbCWiufL.jpg' ],
+          Height: [ [Object] ],
+          Width: [ [Object] ] } ],
+      ItemAttributes:
+      [ { Binding: [ 'Personal Computers' ],
+          Brand: [ 'Apple' ],
+          Color: [ 'Silver' ],
+          EAN: [ '0885909298594' ],
+          EANList: [ [Object] ],
+          Feature:
+           [ 'Intel Core 2 Duo Processor 2.26GHz',
+             '2GB DDR3 RAM',
+             '160GB 5400RPM Hard Drive',
+             '13.3-Inch Screen, NVIDIA GeForce 9400M',
+             'Apple Mac OS X 10.7 Mountain Lion' ],
+          HardwarePlatform: [ 'Mac' ],
+          IsAutographed: [ '0' ],
+          IsEligibleForTradeIn: [ '1' ],
+          IsMemorabilia: [ '0' ],
+          ItemDimensions: [ [Object] ],
+          Label: [ 'Apple Computer' ],
+          LegalDisclaimer: [ 'Startup discs are not available but all necessary drivers and original OS have been installed.' ],
+          ListPrice: [ [Object] ],
+          Manufacturer: [ 'Apple Computer' ],
+          Model: [ 'MB990LL/A' ],
+          MPN: [ 'MB990LL/A' ],
+          NumberOfItems: [ '1' ],
+          OperatingSystem: [ 'Apple Mac OS X 10.6' ],
+          PackageDimensions: [ [Object] ],
+          PackageQuantity: [ '1' ],
+          PartNumber: [ 'MB990LL/A' ],
+          ProductGroup: [ 'Personal Computer' ],
+          ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+          Publisher: [ 'Apple Computer' ],
+          Size: [ '13.3' ],
+          Studio: [ 'Apple Computer' ],
+          Title: [ 'Apple MacBook Pro MB990LL/A 13.3-Inch Laptop' ],
+          TradeInValue: [ [Object] ],
+          UPC: [ '885909296552' ],
+          UPCList: [ [Object] ] } ]
+      },
+      {
+        Item: 5,
+        ASIN:
+        [ 'B01425MCEA' ],
+        ListPrice:
+        [ { Amount: [ '89900' ],
+            CurrencyCode: [ 'USD' ],
+            FormattedPrice: [ '$899.00' ] } ],
+        DetailPageURL:
+        [ 'http://www.amazon.com/Apple-MJVM2LL-11-6-Inch-Integrated-Graphics/dp/B01425MCEA%3FSubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB01425MCEA' ],
+        SmallImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/41LAlMYM1RL._SL75_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        MediumImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/41LAlMYM1RL._SL160_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        LargeImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/41LAlMYM1RL.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        ItemAttributes:
+        [ { Binding: [ 'Personal Computers' ],
+            Brand: [ 'Apple' ],
+            EAN: [ '6901209203459' ],
+            EANList: [ [Object] ],
+            ESRBAgeRating: [ 'Everyone' ],
+            Feature:
+             [ '1.6 GHz dual-core Intel Core i5 (Turbo Boost up to 2.7 GHz) with 3 MB shared L3 cache',
+               '4 GB of 1600 MHz LPDDR3 RAM; 128 GB PCIe-based flash storage',
+               '11.6-Inch (diagonal) LED-backlit Glossy Widescreen Display, 1366 x 768 resolution',
+               'Intel HD Graphics 6000',
+               'OS X Yosemite, Up to 9 Hours of Battery Life' ],
+            Genre: [ 'Wrestling Games' ],
+            HardwarePlatform: [ 'Mac' ],
+            IsEligibleForTradeIn: [ '1' ],
+            ItemDimensions: [ [Object] ],
+            Label: [ 'Apple Computer' ],
+            ListPrice: [ [Object] ],
+            Manufacturer: [ 'Apple Computer' ],
+            Model: [ 'MJVM2LL/A' ],
+            MPN: [ 'MJVM2LL/A' ],
+            OperatingSystem: [ 'Mac OS X' ],
+            PackageDimensions: [ [Object] ],
+            PackageQuantity: [ '1' ],
+            PartNumber: [ 'MJVM2LL/A' ],
+            ProductGroup: [ 'Personal Computer' ],
+            ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+            Publisher: [ 'Apple Computer' ],
+            Studio: [ 'Apple Computer' ],
+            Title: [ 'Apple MacBook Air MJVM2LL/A 11.6-Inch laptop(1.6 GHz Intel i5, 128 GB SSD, Integrated Intel HD Graphics 6000, Mac OS X Yosemite)' ],
+            TradeInValue: [ [Object] ] } ]
+      },
+      {
+        Item: 6,
+        ASIN:
+        [ 'B00153XRZG' ],
+        ListPrice:
+        [ { Amount: [ '16300' ],
+            CurrencyCode: [ 'USD' ],
+            FormattedPrice: [ '$163.00' ] } ],
+        DetailPageURL:
+        [ 'http://www.amazon.com/Apple-MB404B-A-Black-Macbook/dp/B00153XRZG%3FSubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00153XRZG' ],
+        SmallImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/51XZwj4czqL._SL75_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        MediumImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/51XZwj4czqL._SL160_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        LargeImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/51XZwj4czqL.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        ItemAttributes:
+        [ { Binding: [ 'Electronics' ],
+            Brand: [ 'Apple' ],
+            CatalogNumberList: [ [Object] ],
+            Color: [ 'black' ],
+            EAN: [ '0885909218561' ],
+            EANList: [ [Object] ],
+            Feature: [ 'Apple 13.3" MacBook Intel Core 2 Duo' ],
+            HardwarePlatform: [ 'Mac' ],
+            IsEligibleForTradeIn: [ '1' ],
+            ItemDimensions: [ [Object] ],
+            Label: [ 'Apple' ],
+            LegalDisclaimer: [ 'Must live within the continental US.' ],
+            Manufacturer: [ 'Apple' ],
+            Model: [ 'MB404B/A' ],
+            MPN: [ 'MB404B/A' ],
+            OperatingSystem: [ 'Apple Mac OS X v10.5 Leopard' ],
+            PackageDimensions: [ [Object] ],
+            PackageQuantity: [ '1' ],
+            PartNumber: [ 'MB404B/A' ],
+            ProductGroup: [ 'Personal Computer' ],
+            ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+            Publisher: [ 'Apple' ],
+            Size: [ '13"' ],
+            Studio: [ 'Apple' ],
+            Title: [ 'Apple Black Macbook' ],
+            TradeInValue: [ [Object] ],
+            UPC: [ '885909218561' ],
+            UPCList: [ [Object] ] } ]
+      },
+      {
+        Item: 7,
+        ASIN:
+        [ 'B002C744K6' ],
+        ListPrice:
+        [ { Amount: [ '159900' ],
+            CurrencyCode: [ 'USD' ],
+            FormattedPrice: [ '$1,599.00' ] } ],
+        DetailPageURL:
+        [ 'http://www.amazon.com/Apple-MacBook-MC118LL-15-4-Inch-Laptop/dp/B002C744K6%3Fpsc%3D1%26SubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002C744K6' ],
+        SmallImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/41Cxmc27C7L._SL75_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        MediumImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/41Cxmc27C7L._SL160_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        LargeImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/41Cxmc27C7L.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        ItemAttributes:
+        [ { Binding: [ 'Personal Computers' ],
+            Brand: [ 'Apple' ],
+            Color: [ 'silver' ],
+            EAN: [ '0885909315710' ],
+            EANList: [ [Object] ],
+            Feature:
+             [ 'Intel Core 2 Duo Processor 2.53GHz',
+               '4GB DDR3 RAM',
+               '250GB 5400RPM Hard Drive',
+               '15.4-Inch Screen, GeForce',
+               'Apple Mac OS X v10.6 Snow Leopard, 7 hours Battery Life' ],
+            HardwarePlatform: [ 'Mac' ],
+            HazardousMaterialType: [ 'Unknown' ],
+            IsAutographed: [ '0' ],
+            IsEligibleForTradeIn: [ '1' ],
+            IsMemorabilia: [ '0' ],
+            ItemDimensions: [ [Object] ],
+            Label: [ 'Apple Computer' ],
+            LegalDisclaimer: [ '90 day warranty on all parts excluding battery. Batteries ship out with a good working charge, but are consumable items and are not covered under the hardware warranty. 30 days to request any refunds. Refunds are charged a 15% re-stocking fee. We are experts in mac refurbishing and guarantee to provide you with a great working mac.' ],
+            ListPrice: [ [Object] ],
+            Manufacturer: [ 'Apple Computer' ],
+            Model: [ 'MC118LL/A' ],
+            MPN: [ 'MC118LL/A' ],
+            NumberOfItems: [ '1' ],
+            OperatingSystem: [ 'Apple Mac OS X v10.6 Snow Leopard' ],
+            PackageDimensions: [ [Object] ],
+            PackageQuantity: [ '1' ],
+            PartNumber: [ 'MC118LL/A' ],
+            ProductGroup: [ 'Personal Computer' ],
+            ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+            Publisher: [ 'Apple Computer' ],
+            Size: [ '15.4-inch' ],
+            Studio: [ 'Apple Computer' ],
+            Title: [ 'Apple MacBook Pro MC118LL/A 15.4-Inch Laptop' ],
+            TradeInValue: [ [Object] ],
+            UPC: [ '885909315710' ],
+            UPCList: [ [Object] ] } ]
+      },
+      {
+        Item: 8,
+        ASIN:
+        [ 'B003H05K14' ],
+        ListPrice:
+        [ { Amount: [ '74900' ],
+            CurrencyCode: [ 'USD' ],
+            FormattedPrice: [ '$749.00' ] } ],
+        DetailPageURL:
+        [ 'http://www.amazon.com/Apple-MacBook-13-3-Inch-MB403LL-Processor/dp/B003H05K14%3FSubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB003H05K14' ],
+        SmallImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/517%2BbC0jxkL._SL75_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        MediumImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/517%2BbC0jxkL._SL160_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        LargeImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/517%2BbC0jxkL.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        ItemAttributes:
+        [ { Binding: [ 'Electronics' ],
+            Brand: [ 'Apple' ],
+            Color: [ 'White' ],
+            EAN: [ '5027631070818' ],
+            EANList: [ [Object] ],
+            Feature: [ '2 GB RAM, 160 GB Hard Drive)' ],
+            HardwarePlatform: [ 'Mac' ],
+            IsEligibleForTradeIn: [ '1' ],
+            ItemDimensions: [ [Object] ],
+            Label: [ 'Apple Computer' ],
+            LegalDisclaimer: [ 'good laptop with nice performance' ],
+            ListPrice: [ [Object] ],
+            Manufacturer: [ 'Apple Computer' ],
+            Model: [ 'MB403LL/A' ],
+            MPN: [ 'MC374B/A' ],
+            OperatingSystem: [ 'Mac OS X' ],
+            PackageDimensions: [ [Object] ],
+            PackageQuantity: [ '1' ],
+            PartNumber: [ 'MC374B/A' ],
+            ProductGroup: [ 'Personal Computer' ],
+            ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+            Publisher: [ 'Apple Computer' ],
+            Size: [ '13"' ],
+            Studio: [ 'Apple Computer' ],
+            Title: [ 'Apple MacBook 13.3-Inch Laptop MB403LL/A, 2.4 GHz Intel Core 2 Duo Processor, White' ],
+            TradeInValue: [ [Object] ],
+            UPC: [ '885909358724' ],
+            UPCList: [ [Object] ] } ]
+      },
+      {
+        Item: 9,
+        ASIN:
+        [ 'B00UGEBB94' ],
+        ListPrice:
+        [ { Amount: [ '99900' ],
+            CurrencyCode: [ 'USD' ],
+            FormattedPrice: [ '$999.00' ] } ],
+        DetailPageURL:
+        [ 'http://www.amazon.com/Apple-MacBook-MJVE2LL-13-3-Inch-VERSION/dp/B00UGEBB94%3Fpsc%3D1%26SubscriptionId%3DAKIAITJQLXMWIJEFANNA%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00UGEBB94' ],
+        SmallImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/51SNX0afDML._SL75_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        MediumImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/51SNX0afDML._SL160_.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        LargeImage:
+        [ { URL: [ 'http://ecx.images-amazon.com/images/I/51SNX0afDML.jpg' ],
+            Height: [ [Object] ],
+            Width: [ [Object] ] } ],
+        ItemAttributes:
+        [ { Binding: [ 'Personal Computers' ],
+            Brand: [ 'Apple' ],
+            Color: [ 'Silver' ],
+            EAN: [ '0736649735408' ],
+            EANList: [ [Object] ],
+            Feature:
+             [ '1.6 GHz dual-core Intel Core i5 (Turbo Boost up to 2.7 GHz) with 3 MB shared L3 cache',
+               '4 GB of 1600 MHz LPDDR3 RAM; 128 GB PCIe-based flash storage',
+               '13.3-Inch (diagonal) LED-backlit Glossy Widescreen Display, 1440 x 900 resolution',
+               'Intel HD Graphics 6000',
+               'OS X Yosemite, Up to 12 Hours of Battery Life' ],
+            HardwarePlatform: [ 'Mac' ],
+            IsEligibleForTradeIn: [ '1' ],
+            ItemDimensions: [ [Object] ],
+            Label: [ 'Apple Computer' ],
+            LegalDisclaimer: [ 'Brand N/E/W. Sealed' ],
+            ListPrice: [ [Object] ],
+            Manufacturer: [ 'Apple Computer' ],
+            Model: [ 'MJVE2LL/A' ],
+            MPN: [ 'MJVE2LL/A' ],
+            NumberOfItems: [ '1' ],
+            OperatingSystem: [ 'Mac OS X' ],
+            PackageDimensions: [ [Object] ],
+            PackageQuantity: [ '1' ],
+            PartNumber: [ 'MJVE2LL/A' ],
+            ProductGroup: [ 'Personal Computer' ],
+            ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+            Publisher: [ 'Apple Computer' ],
+            Size: [ '128 GB' ],
+            Studio: [ 'Apple Computer' ],
+            Title: [ 'Apple MacBook Air MJVE2LL/A 13.3-Inch Laptop (128 GB) NEWEST VERSION' ],
+            TradeInValue: [ [Object] ],
+            UPC: [ '888462109765' ],
+            UPCList: [ [Object] ] } ]
+      }
+   ];
+
+  return {
+    all: function() {
+      return items;
+    },
+    remove: function(item) {
+      items.splice(items.indexOf(item), 1);
+    },
+    get: function(itemId) {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].Item === parseInt(itemId)) {
+          return items[i];
+        }
+      }
+      return null;
+    },
+    getTerm: function() {
+      return search;
+    },
+    setTerm: function(inTerm) {
+      search.term = inTerm;
+      return null;
+    }
+  };
+});

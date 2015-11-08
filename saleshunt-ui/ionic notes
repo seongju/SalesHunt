@@ -1,0 +1,37 @@
+<directive var="data"></directive>
+
+$scope.$apply
+
+ui-sref="tab.dash"
+
+href="/tab/dash"
+
+$rootScope is acceblble for passing objects because mobile app wont reload at same url. Will reload at default $state. In Desktop, you can reload at url, so killing app and reloading would lose data.
+
+
+parse deploy - use parse command line tool to deploy parse functions (written in JS) to Parse project
+
+
+Key1 = "<!---- key from parse --->"
+
+Key2 = "<!---- key from parse --->"
+in app.js Parse.initialize(key1, key2)
+
+
+//Query is in Parse->Guide->JavaScript
+//API reference is useful after understanding Guide
+
+new Parse.Query("Table")
+
+Better to use Parse.Cloud.run(); -- write a function to control queries. Better than having raw queries.
+
+
+added parse angular patch -- needed to call dep in bower, dep in app.js and load file in index.html
+
+Parse login saved in html5 local storage
+Parse.User.current checks in local storage
+
+window.localStorage.setItem();
+key value pairs with strings.
+
+
