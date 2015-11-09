@@ -1,5 +1,8 @@
 {
   "name": "saleshunt",
-  "app_id": "",
-  "gulpStartupTasks": ["sass", "watch"]
+  "app_id": "b0269b47",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ]
 }

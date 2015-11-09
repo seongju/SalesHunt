@@ -33,20 +33,20 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-.item-limit-lines .item,
-.item-limit-lines .item-content,
-.item-limit-lines,
-.item-limit-lines h1,
-.item-limit-lines h2,
-.item-limit-lines h3,
-.item-limit-lines h4,
-.item-limit-lines h5,
-.item-limit-lines h6,
-.item-limit-lines p,
-.item-complex.item-limit-lines .item-content{
+
+
+.limit-lines h1,
+.limit-lines h2,
+.limit-lines h3,
+.limit-lines h4,
+.limit-lines h5,
+.limit-lines h6,
+.limit-lines p,{
     line-height: 1.5;
-    text-overflow: ellipsis;
-    overflow: hidden;
     height: 3em;
     white-space: normal;
+}
+.search-image item-image{
+    max-height:100px;
+    width:auto;
 }

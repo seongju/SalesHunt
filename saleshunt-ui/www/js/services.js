@@ -1,11 +1,22 @@
 angular.module('starter.services', [])
 
-.factory('TrackSvc', function() {
+.factory('$localstorage', ['$window','$q', function($window, $q) {
+  return {
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+      return JSON.parse($window.localStorage[key] || '[]');
+    }
+  };
+}])
+
+.factory('TrackSvc', ['$localstorage','$q', function($localstorage, $q) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var tracks = [];
-
+  var tracks = $localstorage.getObject('tracklist');
+  console.log(tracks);
   return {
     all: function() {
       return tracks;
@@ -14,9 +25,17 @@ angular.module('starter.services', [])
       tracks.splice(tracks.indexOf(item), 1);
     },
     add: function(item) {
+      for (i = 0; i < tracks.length; ++i) {
+        if (tracks[i].ASIN[0] === item.ASIN[0]) {
+          //alert('You\'re already tracking this item!');
+          return;
+        }
+      }
       var clone = JSON.parse(JSON.stringify(item));
       
       tracks.push(clone);
+
+      $localstorage.setObject('tracklist', tracks);
     },
     get: function(trackId) {
       for (var i = 0; i < tracks.length; i++) {
@@ -27,7 +46,7 @@ angular.module('starter.services', [])
       return null;
     }
   };
-})
+}])
 
 .factory('SearchSvc', function() {
   // Might use a resource here that returns a JSON array
