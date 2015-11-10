@@ -1,0 +1,1 @@
+curl -u 95627015831cebfdb6ab789524821587374b33c6a7d5db9e: -H "Content-Type: application/json" -H "X-Ionic-Application-Id: b0269b47" https://push.ionic.io/api/v1/push -d '{"tokens": ["YOUR_TOKEN"],"notification":{"alert":"Hello world."}}'
