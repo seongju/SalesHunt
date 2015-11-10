@@ -9,6 +9,24 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+    Ionic.io();
+    // this will give you a fresh user or the previously saved 'current user'
+    var user = Ionic.User.current();
+
+    // if the user doesn't have an id, you'll need to give it one.
+    if (!user.id) {
+      user.id = Ionic.User.anonymousId();
+      // user.id = 'your-custom-user-id';
+    }
+
+//persist the user
+user.save();
+    var push = new Ionic.Push({});
+
+    push.register(function(token) {
+      // Log out your device token (Save this!)
+      console.log("Got Token:",token.token);
+    });
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
