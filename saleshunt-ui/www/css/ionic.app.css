@@ -11,6 +11,12 @@
 .shgreen-bg {
   background-color: #7ed321; }
 
+.bggray, a.bggray {
+  color: #e1e9e4; }
+
+.bggray-bg {
+  background-color: #e1e9e4; }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/

@@ -12,7 +12,7 @@ $royal:                 #8a6de9 !default;
 $dark:                  #444    !default;
 $shgray:                #9b9b9b !default;
 $shgreen:               #7ed321 !default;
-
+$bggray:                #e1e9e4 !default;
 
 .shgray, a.shgray {
   color: $shgray; }
@@ -25,6 +25,12 @@ $shgreen:               #7ed321 !default;
 
 .shgreen-bg {
   background-color: $shgreen; }
+
+.bggray, a.bggray {
+  color: $bggray; }
+
+.bggray-bg {
+  background-color: $bggray; }
 
 
 // The path for our ionicons font files, relative to the built CSS in www/css

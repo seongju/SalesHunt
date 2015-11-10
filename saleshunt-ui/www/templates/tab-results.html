@@ -1,15 +1,15 @@
 <ion-view view-title="Results">
   <ion-content>
     <div class="bar bar-header item-input-inset">
-      <label class="item-input-wrapper">
-        <i class="icon ion-ios-search placeholder-icon"></i>
+      <label class="item-input-wrapper light-bg">
+        <i class="icon ion-ios-search"></i>
         <input type="search" placeholder="Search" ng-model="search.term">
       </label>
     </div>
     <ion-list>
-      <div class="row row-center" ng-repeat="item in items track by item.Item" ng-if="$even">
+      <div class="row row-center bggray-bg" ng-repeat="item in items track by item.Item" ng-if="$even">
         <div class="col">
-          <div class="card"  ng-click="viewItem(item)" style="margin: 1px 1px;">
+          <div class="card"  ng-click="viewItem(item)" style="margin: 2px 2px;">
             <div class="item item-image">
               <img ng-src="{{item.MediumImage[0].URL[0]}}" style="max-height:100px;width:auto;">
             </div>
