@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.push', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -18,35 +18,29 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       user.id = Ionic.User.anonymousId();
       // user.id = 'your-custom-user-id';
     }
+    //persist the user
+    user.save();
 
-//persist the user
-user.save();
     var push = new Ionic.Push({});
 
-    push.register(function(token) {
-      // Log out your device token (Save this!)
-      console.log("Got Token:",token.token);
-    });
+    var callback = function(pushToken) {
+      console.log('Registered token:', pushToken.token);
+      user.addPushToken(pushToken);
+      user.save(); // you NEED to call a save after you add the token
+    };
+
+    push.register(callback);
+    
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-
-    var push = new Ionic.Push({
-      "debug": true
-    });
-
-    push.register(function(token) {
-      console.log("Device token:",token.token);
-    });
-    
   });
 })
 
