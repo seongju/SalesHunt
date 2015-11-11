@@ -5,29 +5,49 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.push', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ionic.service.core','ngCordova', 'ionic.service.push', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+
     Ionic.io();
+
+    var push = new Ionic.Push({
+      "debug": true,
+      "onNotification": function(notification) {
+        var payload = notification.payload;
+        // console.log(notification, payload);
+      },
+      "onRegister": function(data) {
+        // console.log(data.token);
+      },
+      "pluginConfig": {
+        "ios": {
+          "badge": true,
+          "sound": true
+         },
+         "android": {
+           "iconColor": "#343434"
+         }
+      } 
+    });
     // this will give you a fresh user or the previously saved 'current user'
     var user = Ionic.User.current();
-
     // if the user doesn't have an id, you'll need to give it one.
     if (!user.id) {
       user.id = Ionic.User.anonymousId();
       // user.id = 'your-custom-user-id';
     }
 
-    var push = new Ionic.Push({});
-
     var callback = function(pushToken) {
       console.log('Registered token:', pushToken.token);
       user.addPushToken(pushToken);
       user.save(); // you NEED to call a save after you add the token
-    };
+    }
 
     push.register(callback);
+
+    
     
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -43,6 +63,9 @@ angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.push', '
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+
+
+  
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
