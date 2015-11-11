@@ -18,8 +18,6 @@ angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.push', '
       user.id = Ionic.User.anonymousId();
       // user.id = 'your-custom-user-id';
     }
-    //persist the user
-    user.save();
 
     var push = new Ionic.Push({});
 
