@@ -9106,7 +9106,4 @@ a.button {
   width: auto; }
 
 .home {
-  background-image: url("/img/home_img.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100%; }
+  width: 100%; }
