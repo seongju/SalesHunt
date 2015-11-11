@@ -47,7 +47,7 @@ angular.module('starter', ['ionic', 'ionic.service.core','ngCordova', 'ionic.ser
 
     push.register(callback);
 
-    
+
     
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

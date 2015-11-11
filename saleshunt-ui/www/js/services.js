@@ -23,6 +23,7 @@ angular.module('starter.services', [])
     },
     remove: function(item) {
       tracks.splice(tracks.indexOf(item), 1);
+      $localstorage.setObject('tracklist', tracks);
     },
     add: function(item) {
       for (i = 0; i < tracks.length; ++i) {
