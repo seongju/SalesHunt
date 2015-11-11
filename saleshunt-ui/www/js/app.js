@@ -35,6 +35,7 @@ angular.module('starter', ['ionic', 'ionic.service.core','ngCordova', 'ionic.ser
     });
     // this will give you a fresh user or the previously saved 'current user'
     var user = Ionic.User.current();
+    user.id = Ionic.User.anonymousId();
     // if the user doesn't have an id, you'll need to give it one.
     if (!user.id) {
       user.id = Ionic.User.anonymousId();
