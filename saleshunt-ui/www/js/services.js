@@ -643,6 +643,9 @@ angular.module('starter.services', [])
     },
     setTerm: function(inTerm) {
       search.term = inTerm;
+      //call api.then update items
+      //items.clear()
+      //for results, items.push(result)
       return null;
     }
   };

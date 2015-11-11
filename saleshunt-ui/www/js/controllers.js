@@ -28,6 +28,14 @@ angular.module('starter.controllers', [])
   $scope.remove = function(item) {
     SearchSvc.remove(item);
   };
+  $scope.submit = function(){
+    if ($scope.search.term === '') {
+      return;
+    }
+    SearchSvc.setTerm($scope.search.term);
+    $state.go($state.current, {}, {reload: true});
+    //$state.go('tab.results');
+  };
   // $scope.clear = function() {
   //   $scope.search = '';
   // };
@@ -63,6 +71,10 @@ angular.module('starter.controllers', [])
   $scope.trackButton=false;
   $scope.addToList = function(item) {
     TrackSvc.add(item);
+    $state.go('tab.tracklist');
+  };
+  $scope.remove = function(item) {
+    TrackSvc.remove(item);
     $state.go('tab.tracklist');
   };
 })
