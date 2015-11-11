@@ -1741,7 +1741,7 @@ angular.module('starter.services', [])
       if (search.term == "macbook" || search.term == "Macbook"){
         toAdd = macbook;
       }
-      else if (search.term == "xps13" || search.term == "xps13"){
+      else if (search.term == "xps13" || search.term == "Xps13"){
         toAdd = xps;
       }
       else if (search.term == "surface pro" || search.term == "Surface pro"){
