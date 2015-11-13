@@ -7,19 +7,21 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "*"
+    "express": "~4.13.3",
+    "xml2js": "0.4.15",
+    "body-parser": "~1.14.1"
   },
   "engines": {
     "node": "4.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-sample"
+    "url": "https://github.com/seongju/SalesHunt"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
     "Amazon"
   ],
   "author": "Seong Ju Park",

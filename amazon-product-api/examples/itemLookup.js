@@ -2,12 +2,12 @@ var amazon = require('../lib');
 
 var client = amazon.createClient({
   awsTag: "799721652307",
-  awsId: "AKIAITJQLXMWIJEFANNA",
-  awsSecret: "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"
+  awsId: "AKIAIVPA5GTUYJPWZSHQ",
+  awsSecret: "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"
 });
 
 client.itemSearch({
-  Keywords: 'Macbook',
+  Keywords: 'Surface Pro',
   responseGroup: 'ItemAttributes,Images'
 }, function(err, results) {
   if (err) {

@@ -1,13 +1,39 @@
-var express = require('express')
-var app = express()
+var express = require('express'),
+	amazon = require('./lib'),
+ 	bodyParser = require('body-parser'),
+ 	app = express();
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+app.use(bodyParser.json());
+app.set('port', (process.env.PORT || 5000));
 
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
+var client = amazon.createClient({
+	awsTag: process.env.awsTag,
+	awsId: process.env.awsId,
+    awsSecret: process.env.awsSecret
+});
 
 app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+  	console.log("Node app is running at localhost:" + app.get('port'))
+});
+
+app.post('/itemSearch', function(req, res) {
+	var keywords = req.body.Keywords;
+	console.log(keywords);
+
+	query = {
+		Keywords: keywords,
+		responseGroup: 'ItemAttributes,Images'
+	};
+
+	console.log(query);
+
+	client.itemSearch(query, function(err, results){
+		if (err){
+			console.log(err);
+			res.status(404);
+		} else {
+			console.log("Done");
+  			res.status(200).send(results);
+		}
+	});
+});
