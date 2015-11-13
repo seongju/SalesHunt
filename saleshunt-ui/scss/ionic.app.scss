@@ -2,7 +2,7 @@
 // -------------------------------
 
 $light:                 #fff !default;
-$stable:                #f8f8f8 !default;
+$stable:                #f5f5f5 !default;
 $positive:              #4ea4be !default; //#4a87ee;
 $calm:                  #40A7CF !default; //#43cee6;
 $balanced:              #7ed321 !default; //#66cc33
@@ -13,6 +13,16 @@ $dark:                  #444    !default;
 $shgray:                #9b9b9b !default;
 $shgreen:               #7ed321 !default;
 $bggray:                #e1e9e4 !default;
+$secondary:             #f5f5f5 !default;
+
+
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
 
 .shgray, a.shgray {
   color: $shgray; }
@@ -32,13 +42,11 @@ $bggray:                #e1e9e4 !default;
 .bggray-bg {
   background-color: $bggray; }
 
+.secondary, a.secondary {
+  color: $secondary; }
 
-// The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
-
-// Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
-
+.secondary-bg {
+  background-color: $secondary; }
 
 
 .limit-lines h1,
@@ -55,4 +63,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .search-image item-image{
     max-height:100px;
     width:auto;
+}
+.home {
+    width: 100%;
 }

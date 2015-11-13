@@ -1,0 +1,532 @@
+-----------------------------------------------------
+Item: 0
+ASIN:
+[ 'B00RY4X8A4' ]
+ListPrice:
+[ { Amount: [ '139999' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,399.99' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Dell-XPS13-9343-13-3-inch-Ultrabook-Processor/dp/B00RY4X8A4%3Fpsc%3D1%26SubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00RY4X8A4' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51vQxoCGyuL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51vQxoCGyuL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51vQxoCGyuL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell' ],
+    Color: [ 'Silver' ],
+    EAN: [ '0884146543924' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'The World\'s Frst Infinity Display of 13.3" Full HD (1920 x 1080) Backlit WLED Screen',
+       '5th Generation Broadwell Intel Core i5-5200U 2.20 GHz with Turbo Boost Technology up to 2.70 GHz',
+       '4GB Dual Channel DDR3L-RS 1600Mhz/ 128GB SSD / Intel HD Graphics 5500',
+       'Backlit Keyboard; 2 x USB 3.0; Bluetooth 4.0; HDMI; Exceptionally Long-Lasting Battery Life up to 15 hrs',
+       'Windows 8.1 (64-bit), light weight only 2.6 lbs' ],
+    HardwarePlatform: [ 'PC' ],
+    IsEligibleForTradeIn: [ '1' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell Computers' ],
+    LegalDisclaimer: [ 'THC' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell Computers' ],
+    Model: [ 'XPS13-9343' ],
+    MPN: [ 'XPS13' ],
+    OperatingSystem: [ 'Windows 8;' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'XPS13' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+    Publisher: [ 'Dell Computers' ],
+    Studio: [ 'Dell Computers' ],
+    Title: [ 'Dell XPS13 XPS13-9343 13.3-inch Ultrabook Computer (2.2 GHz Intel Core i5 Processor, 4 GB DDR3 SDRAM, 128 GB Solid State Hard Drive, Windows 8)' ],
+    TradeInValue: [ [Object] ],
+    UPC: [ '884146543924' ],
+    UPCList: [ [Object] ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 1
+ASIN:
+[ 'B015PYYPFG' ]
+ListPrice:
+[ { Amount: [ '139999' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,399.99' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Dell-XPS9350-4007SLV-Touchscreen-Generation-Microsoft/dp/B015PYYPFG%3Fpsc%3D1%26SubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB015PYYPFG' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41%2Bt2BscAjL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41%2Bt2BscAjL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41%2Bt2BscAjL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell' ],
+    Color: [ 'Machined Aluminum' ],
+    EAN: [ '0884116204275' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'Intel Dual Core i5-6200U 2.3 GHz Processor',
+       '8 GB LPDDR3',
+       '256 GB SSD Storage; Optical Drive Not included',
+       '13.3 Inch QHD+ (3200 x 1800 pixels) LED-lit Truelife Touchscreen',
+       'Windows 10 Operating System; Machined Aluminum Chassis' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell Marketing USA, LP' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell Marketing USA, LP' ],
+    Model: [ 'XPS9350-4007SLV' ],
+    MPN: [ 'XPS9350-4007SLV' ],
+    NumberOfItems: [ '1' ],
+    OperatingSystem: [ 'Windows 10' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'XPS9350-4007SLV' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+    Publisher: [ 'Dell Marketing USA, LP' ],
+    Studio: [ 'Dell Marketing USA, LP' ],
+    Title: [ 'Dell XPS9350-4007SLV 13.3 Inch QHD+ Touchscreen Laptop (6th Generation Intel Core i5, 8 GB RAM, 256 GB SSD) Microsoft Signature Edition' ],
+    UPC: [ '884116204275' ],
+    UPCList: [ [Object] ],
+    Warranty: [ '1 Year Mail In Service' ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 2
+ASIN:
+[ 'B00VWC2NBO' ]
+ListPrice:
+[ { Amount: [ '129900' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,299.00' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Dell-13-3-Inch-Ultrabook-Generation-Refurbished/dp/B00VWC2NBO%3Fpsc%3D1%26SubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00VWC2NBO' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51dzW5BdffL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51dzW5BdffL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51dzW5BdffL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell' ],
+    EAN: [ '0788679075139' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'This Certified Refurbished product is manufacturer refurbished, shows limited or no wear, and includes all original accessories plus a 180 day warranty.',
+       'The World\'s Frst Infinity Display of 13.3 inch Full HD (1920 x 1080) Backlit WLED Screen',
+       '5th Generation Broadwell Intel Core i5-5200U 2.20 GHz with Turbo Boost Technology up to 2.70 GHz',
+       '4GB DDR3 RAM / 128GB SSD / Intel HD Graphics 5500',
+       'Windows 8.1 (64-bit), light weight only 2.6 lbs' ],
+    IsEligibleForTradeIn: [ '1' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell Computers' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell Computers' ],
+    Model: [ 'DELL XPS 9343' ],
+    MPN: [ 'DELL XPS 13' ],
+    OperatingSystem: [ 'Windows 8;' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'DELL XPS 13' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'COMPUTER' ],
+    Publisher: [ 'Dell Computers' ],
+    Studio: [ 'Dell Computers' ],
+    Title: [ 'Dell XPS13 13.3-Inch Full HD WLED Backlit Infinity Display Ultrabook (2.2GHz 5th Generation Intel Core i5-5200U Processor, 4GB DDR3 RAM, 128GB SSD, Windows 8.1) (Certified Refurbished)' ],
+    TradeInValue: [ [Object] ],
+    UPC: [ '788679075139' ],
+    UPCList: [ [Object] ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 3
+ASIN:
+[ 'B010DODC66' ]
+ListPrice:
+[ { Amount: [ '139999' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,399.99' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Dell-Touchscreen-Laptop-Microsoft-Signature/dp/B010DODC66%3Fpsc%3D1%26SubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB010DODC66' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51EfIH6gyqL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51EfIH6gyqL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51EfIH6gyqL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell' ],
+    EAN: [ '0884116167938' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'Intel Core i5 5200U 2.2 GHz Processor',
+       '8 GB DDR3L SDRAM',
+       '256 GB SSD Storage; No Optical Drive',
+       '13.3 Inch WQXGA+ (3200x1800) LED-lit Infinity Touchscreen',
+       'Windows 10 Operating System; Silver Chassis' ],
+    HardwarePlatform: [ 'Unknown' ],
+    IsEligibleForTradeIn: [ '1' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell Marketing USA, LP' ],
+    Languages: [ [Object] ],
+    LegalDisclaimer: [ 'All warranties, expressed and/or implied, are form the manufacturer. We do not manufacture the products and are not liable for any warranty issues, Please contact the manufacturer for any warranty issues and/or questions.' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell Marketing USA, LP' ],
+    Model: [ 'XPS9343-6365SLV' ],
+    MPN: [ 'XPS9343-6365SLV' ],
+    NumberOfItems: [ '1' ],
+    OperatingSystem: [ 'Windows 10' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'XPS9343-6365SLV' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+    Publisher: [ 'Dell Marketing USA, LP' ],
+    ReleaseDate: [ '2015-07-29' ],
+    Studio: [ 'Dell Marketing USA, LP' ],
+    Title: [ 'Dell XPS 13 QHD 13.3 Inch Touchscreen Laptop (Intel Core i5 5200U, 8 GB RAM, 256 GB SSD, Silver) Microsoft Signature Image' ],
+    TradeInValue: [ [Object] ],
+    UPC: [ '884116167938' ],
+    UPCList: [ [Object] ],
+    Warranty: [ '1Yr In-Home Warranty' ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 4
+ASIN:
+[ 'B00VWC2U1C' ]
+ListPrice:
+[ { Amount: [ '149900' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,499.00' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Newest-Model-Dell-Ultrabook-Computer/dp/B00VWC2U1C%3Fpsc%3D1%26SubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00VWC2U1C' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/413Q%2BwiDPmL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/413Q%2BwiDPmL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/413Q%2BwiDPmL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell' ],
+    EAN: [ '0788679075146' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'This Certified Refurbished product is manufacturer refurbished, shows limited or no wear, and includes all original accessories plus a 90 day warranty.',
+       'The World\'s Frst Infinity Display of 13.3 inch Full HD (1920 x 1080) Backlit WLED Screen',
+       '5th Generation Broadwell Intel Core i5-5200U 2.20 GHz with Turbo Boost Technology up to 2.70 GHz',
+       '8GB DDR3 RAM / 128GB SSD / Intel HD Graphics 5500',
+       'Windows 8.1 (64-bit), light weight only 2.6 lbs' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'DELL' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'DELL' ],
+    Model: [ 'XPS13-9343-8128' ],
+    MPN: [ 'DELL XPS 13' ],
+    OperatingSystem: [ 'Windows 8;' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'DELL XPS 13' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'COMPUTER' ],
+    Publisher: [ 'DELL' ],
+    Studio: [ 'DELL' ],
+    Title: [ '2015 Newest Model Dell XPS13 Ultrabook Computer - the World\'s First 13.3" FHD WLED Backlit Infinity Display, 5th Gen Intel Core i5-5200U Processor 2.2GHz / 8GB DDR3 / 128GB SSD / Windows 8.1 (Certified Refurbished)' ],
+    UPC: [ '788679075146' ],
+    UPCList: [ [Object] ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 5
+ASIN:
+[ 'B016RH3DSA' ]
+ListPrice:
+[ { Amount: [ '149900' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,499.00' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Newest-Dell-Ultrabook-Windows-Operating/dp/B016RH3DSA%3Fpsc%3D1%26SubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB016RH3DSA' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51B57%2BdnFmL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51B57%2BdnFmL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51B57%2BdnFmL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell' ],
+    EAN: [ '0788679078680' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'The World\'s First Infinity Display of 13.3" Full HD (1920 x 1080) Backlit WLED Screen with integrated 1MP 720p webcam, 5th Generation Broadwell Intel Core i5-5200U 2.20 GHz with Turbo Boost Technology up to 2.70 GHz',
+       '5th Generation Broadwell Intel Core i5-5200U 2.20 GHz with Turbo Boost Technology up to 2.70 GHz',
+       '4GB Dual Channel DDR3L-RS 1600Mhz/ 128GB SSD / Intel HD Graphics 5500',
+       'Backlit Keyboard; 2 x USB 3.0; Bluetooth 4.0; HDMI; Exceptionally Long-Lasting Battery Life up to 15 hrs',
+       'Windows 10 Home, 64- bit' ],
+    HardwarePlatform: [ 'PC' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell Computers' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell Computers' ],
+    Model: [ 'XPS13-9343' ],
+    MPN: [ 'DELL XPS 13' ],
+    OperatingSystem: [ 'other' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'DELL XPS 13' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+    Publisher: [ 'Dell Computers' ],
+    Studio: [ 'Dell Computers' ],
+    Title: [ 'Newest Dell XPS13 Ultrabook Windows 10 Home Operating System - the World\'s First 13.3 inch FHD Infinity Display, Intel i5-5200U Processor 2.2GHz / 4GB DDR3 RAM / 128GB SSD' ],
+    UPC: [ '788679078680' ],
+    UPCList: [ [Object] ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 6
+ASIN:
+[ 'B00W4LBHE6' ]
+ListPrice:
+[ { Amount: [ '126125' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,261.25' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Dell-9343-2727SLV-Signature-Edition-Laptop/dp/B00W4LBHE6%3FSubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00W4LBHE6' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/31BiyeZvc6L._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/31BiyeZvc6L._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/31BiyeZvc6L.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell Consumer' ],
+    Color: [ 'Silver' ],
+    EAN: [ '0884116165118' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'Screen Size:13.3"',
+       'Processor Type:Core i5',
+       'Standard Memory:4 GB' ],
+    HardwarePlatform: [ 'Unknown' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell' ],
+    Model: [ 'XPS9343-2727SLV' ],
+    MPN: [ 'XPS9343-2727SLV' ],
+    OperatingSystem: [ 'Unknown' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'XPS9343-2727SLV' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+    Publisher: [ 'Dell' ],
+    Studio: [ 'Dell' ],
+    Title: [ 'Dell XPS 13 9343-2727SLV Core i5 128GB Signature Edition Laptop' ],
+    UPC: [ '884116165118' ],
+    UPCList: [ [Object] ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 7
+ASIN:
+[ 'B00VWCUBDG' ]
+ListPrice:
+[ { Amount: [ '99900' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$999.00' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Newest-Model-Dell-Ultrabook-Computer/dp/B00VWCUBDG%3Fpsc%3D1%26SubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00VWCUBDG' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51b7yDKI3lL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51b7yDKI3lL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/51b7yDKI3lL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell' ],
+    EAN: [ '0788679075160' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'This Certified Refurbished product is manufacturer refurbished, shows limited or no wear, and includes all original accessories plus a 180 day warranty.',
+       'The World\'s Frst Infinity Display of 13.3" Full HD (1920 x 1080) Backlit WLED Screen',
+       '5th Generation Broadwell Intel Core i3-5010U 2.10 GHz',
+       '4GB DDR3 RAM / 128GB SSD / Intel HD Graphics 5500',
+       'Windows 8.1 (64-bit), light weight only 2.6 lbs' ],
+    HardwarePlatform: [ 'PC' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell Computers' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell Computers' ],
+    Model: [ 'XPS13-9343' ],
+    MPN: [ 'DELL XPS 13' ],
+    OperatingSystem: [ 'Windows 8;' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'DELL XPS 13' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'COMPUTER' ],
+    Publisher: [ 'Dell Computers' ],
+    Studio: [ 'Dell Computers' ],
+    Title: [ '2015 Newest Model Dell XPS13 Ultrabook Computer - the World\'s First 13.3" FHD WLED Backlit Infinity Display, 5th Gen Intel Core i3-5010U Processor 2.1GHz / 4GB DDR3 / 128GB SSD / Windows 8.1 (Certified Refurbished)' ],
+    UPC: [ '788679075160' ],
+    UPCList: [ [Object] ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 8
+ASIN:
+[ 'B00SYEP70C' ]
+ListPrice:
+[ { Amount: [ '119999' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,199.99' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/XPS13-9343-Ultrabook-Computer-Bluetooth/dp/B00SYEP70C%3FSubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00SYEP70C' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41mVtQg6bTL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41mVtQg6bTL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41mVtQg6bTL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { Binding: [ 'Personal Computers' ],
+    Brand: [ 'XPS' ],
+    EAN: [ '0883246265651' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'The World\'s Frst Infinity Display of 13.3',
+       '5th Generation Broadwell Intel Core i5-5200U 2.20 GHz with Turbo Boost Technology up to 2.70 GHz',
+       '4GB DDR3 RAM / 128GB SSD / Intel HD Graphics 5500',
+       'Exceptionally Long-Lasting Battery Life up to 15 hrs',
+       'Windows 8.1 Professional (64-bit), light weight only 2.6 lbs' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell Computers' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell Computers' ],
+    Model: [ 'XPS13 9343' ],
+    OperatingSystem: [ 'Windows 8 Pro' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+    Publisher: [ 'Dell Computers' ],
+    Studio: [ 'Dell Computers' ],
+    Title: [ '2015 Newest Model Dell XPS13 9343 Ultrabook Computer / the World\'s First 13.3" FHD WLED Backlit Infinity Display / 5th Gen Intel Core i5-5200U / 4GB DDR3 / 128GB SSD / Windows 8.1 Pro / Backlit Keyboard / Bluetooth' ],
+    UPC: [ '883246265651' ],
+    UPCList: [ [Object] ] } ]
+-----------------------------------------------------
+-----------------------------------------------------
+Item: 9
+ASIN:
+[ 'B015PYYO0C' ]
+ListPrice:
+[ { Amount: [ '149999' ],
+    CurrencyCode: [ 'USD' ],
+    FormattedPrice: [ '$1,499.99' ] } ]
+DetailPageURL:
+[ 'http://www.amazon.com/Dell-XPS9350-5340SLV-Touchscreen-Generation-Microsoft/dp/B015PYYO0C%3Fpsc%3D1%26SubscriptionId%3DAKIAIVPA5GTUYJPWZSHQ%26tag%3D799721652307%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB015PYYO0C' ]
+SmallImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41%2Bt2BscAjL._SL75_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+MediumImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41%2Bt2BscAjL._SL160_.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+LargeImage:
+[ { URL: [ 'http://ecx.images-amazon.com/images/I/41%2Bt2BscAjL.jpg' ],
+    Height: [ [Object] ],
+    Width: [ [Object] ] } ]
+ItemAttributes:
+[ { AspectRatio: [ '16:9' ],
+    Binding: [ 'Personal Computers' ],
+    Brand: [ 'Dell' ],
+    Color: [ 'Machined Aluminum' ],
+    EAN: [ '0884116204282' ],
+    EANList: [ [Object] ],
+    Feature: 
+     [ 'Intel Dual Core i7-6500U 2.5 GHz Processor',
+       '8 GB LPDDR3',
+       '256 GB SSD Storage; Optical Drive Not included',
+       '13.3 Inch QHD+ (3200 x 1800 pixels) LED-lit Truelife Touchscreen',
+       'Windows 10 Operating System; Machined Aluminum Chassis' ],
+    ItemDimensions: [ [Object] ],
+    Label: [ 'Dell Marketing USA, LP' ],
+    ListPrice: [ [Object] ],
+    Manufacturer: [ 'Dell Marketing USA, LP' ],
+    Model: [ 'XPS9350-5340SLV' ],
+    MPN: [ 'XPS9350-5340SLV' ],
+    NumberOfItems: [ '1' ],
+    OperatingSystem: [ 'Windows 10' ],
+    PackageDimensions: [ [Object] ],
+    PackageQuantity: [ '1' ],
+    PartNumber: [ 'XPS9350-5340SLV' ],
+    ProductGroup: [ 'Personal Computer' ],
+    ProductTypeName: [ 'NOTEBOOK_COMPUTER' ],
+    Publisher: [ 'Dell Marketing USA, LP' ],
+    Studio: [ 'Dell Marketing USA, LP' ],
+    Title: [ 'Dell XPS9350-5340SLV 13.3 Inch QHD+ Touchscreen Laptop (6th Generation Intel Core i7, 8 GB RAM, 256 GB SSD) Microsoft Signature Edition' ],
+    UPC: [ '884116204282' ],
+    UPCList: [ [Object] ],
+    Warranty: [ '1 Year Mail In Service' ] } ]
+-----------------------------------------------------

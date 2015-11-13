@@ -5,11 +5,15 @@
   The Friends service returns an array of friend data
 -->
 <ion-view view-title="{{item.ItemAttributes[0].Brand[0]}}">
-  <ion-content class="padding">
+  <ion-content class="padding stable-bg">
     <h3>{{item.ItemAttributes[0].Title[0]}}</h3>
     <img class="full-image padding" ng-src="{{item.LargeImage[0].URL[0]}}">
     <h4 class="padding" style="text-align: center">{{item.ListPrice[0].FormattedPrice[0]}}</h4>
     <!-- <p ng-repeat="line in item.ItemAttributes[0].Feature">{{line}}</p> -->
-   <button class="padding button button-block icon-left ion-pinpoint button-balanced" ng-click="addToList(item)" ng-show="trackButton">Track!</button>
+    <button class="padding button button-block icon-left ion-pinpoint button-balanced" ng-click="addToList(item)" ng-show="trackButton">Track!
+    </button>
+    <button class="padding button button-block icon-left ion-trash button-assertive" ng-click="remove(item)" ng-hide="trackButton">
+      Delete
+    </button>
   </ion-content>
 </ion-view>
