@@ -1,0 +1,27 @@
+{
+  "name": "amazonAPIHeroku",
+  "version": "0.1.0",
+  "description": "Code that is going to call Amazon's Product Advertising API in Heroku",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "*"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-sample"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+    "Amazon"
+  ],
+  "author": "Seong Ju Park",
+  "license": "MIT"
+}
