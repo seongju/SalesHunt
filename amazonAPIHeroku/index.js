@@ -12,6 +12,10 @@ var client = amazon.createClient({
     awsSecret: process.env.awsSecret
 });
 
+console.log(process.env.awsTag);
+console.log(process.env.awsId);
+console.log(process.env.awsSecret);
+
 app.listen(app.get('port'), function() {
   	console.log("Node app is running at localhost:" + app.get('port'))
 });
