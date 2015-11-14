@@ -1736,7 +1736,6 @@ angular.module('starter.services', [])
     },
     setTerm: function(inTerm) {
       search.term = inTerm;
-
       var req = {
         method: 'POST',
         url: 'https://saleshunt-api.herokuapp.com/itemSearch',

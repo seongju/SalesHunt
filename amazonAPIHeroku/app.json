@@ -1,0 +1,6 @@
+{
+  "name": "amazonAPIHeroku",
+  "description": "A barebones Node.js app using Express 4",
+  "repository": "https://github.com/seongju/SalesHunt",
+  "keywords": ["node", "express", "static"]
+}

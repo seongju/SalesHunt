@@ -17,9 +17,11 @@ angular.module('starter', ['ionic', 'ionic.service.core','ngCordova', 'ionic.ser
       "onNotification": function(notification) {
         var payload = notification.payload;
         // console.log(notification, payload);
+        alert( "Price drop on Macbook Air!");
       },
       "onRegister": function(data) {
         // console.log(data.token);
+
       },
       "pluginConfig": {
         "ios": {
@@ -33,6 +35,7 @@ angular.module('starter', ['ionic', 'ionic.service.core','ngCordova', 'ionic.ser
     });
     // this will give you a fresh user or the previously saved 'current user'
     var user = Ionic.User.current();
+    user.id = Ionic.User.anonymousId();
     // if the user doesn't have an id, you'll need to give it one.
     if (!user.id) {
       user.id = Ionic.User.anonymousId();
@@ -41,7 +44,8 @@ angular.module('starter', ['ionic', 'ionic.service.core','ngCordova', 'ionic.ser
 
     var callback = function(pushToken) {
       console.log('Registered token:', pushToken.token);
-      user.addPushToken(pushToken);
+      user.addPushToken(pushToken.token);
+      user.set('token', pushToken.token);
       user.save(); // you NEED to call a save after you add the token
     }
 
