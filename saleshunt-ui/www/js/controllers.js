@@ -23,7 +23,7 @@ angular.module('starter.controllers', [])
   $scope.search = SearchSvc.getTerm();
   $scope.items = SearchSvc.all();
   $scope.viewItem = function(item) {
-    $state.go('tab.resultsDetail',{searchId: item.Item});
+    $state.go('tab.resultsDetail',{searchId: item.ASIN[0]});
   };
   $scope.remove = function(item) {
     SearchSvc.remove(item);
