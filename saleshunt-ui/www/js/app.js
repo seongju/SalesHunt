@@ -5,10 +5,73 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ionic.service.core','ngCordova', 'ionic.service.push', 'starter.controllers', 'starter.services'])
+// API_KEY: AIzaSyAi37LkflJ-QKBm0WW6UKLvZ_CA68e7yZk
+
+angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.service.push', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+    
+    /* external */
+    pushNotification = window.plugins.pushNotification;
+    
+    window.onNotification = function(e){
+
+          switch(e.event){
+            case 'registered':
+              if(e.regid.length > 0){
+
+                var device_token = e.regid;
+                RequestsService.register(device_token).then(function(response){
+                  alert('registered!');
+                });
+              }
+            break;
+
+            case 'message':
+              alert('msg received: ' + e.message);
+              /*
+                {
+                    "message": "Hello this is a push notification",
+                    "payload": {
+                        "message": "Hello this is a push notification",
+                        "sound": "notification",
+                        "title": "New Message",
+                        "from": "813xxxxxxx",
+                        "collapse_key": "do_not_collapse",
+                        "foreground": true,
+                        "event": "message"
+                    }
+                }
+              */
+            break;
+
+            case 'error':
+              alert('error occured');
+            break;
+
+          }
+    };
+
+    window.errorHandler = function(error){
+      alert('an error occured');
+    }
+
+    pushNotification.register(
+      onNotification,
+      errorHandler,
+      {
+        'badge': 'true',
+        'sound': 'true',
+        'alert': 'true',
+        'ecb': 'onNotification',
+        'senderID': 'eecs441',
+        'device_token' : '1234'
+      }
+    );
+
+    /* end of external */
+    /* end of external */
 
     Ionic.io();
 
@@ -65,6 +128,8 @@ angular.module('starter', ['ionic', 'ionic.service.core','ngCordova', 'ionic.ser
     }
   });
 })
+
+
 
 .config(function($stateProvider, $urlRouterProvider) {
 
