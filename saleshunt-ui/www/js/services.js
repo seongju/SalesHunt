@@ -49,7 +49,7 @@ angular.module('starter.services', [])
   };
 }])
 
-.factory('SearchSvc', function() {
+.factory('SearchSvc', function($http) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -1736,27 +1736,31 @@ angular.module('starter.services', [])
     },
     setTerm: function(inTerm) {
       search.term = inTerm;
-      items.splice(0,items.length);
-      var toAdd =[];
-      if (search.term == "macbook" || search.term == "Macbook"){
-        toAdd = macbook;
-      }
-      else if (search.term == "xps13" || search.term == "Xps13"){
-        toAdd = xps;
-      }
-      else if (search.term == "surface pro" || search.term == "Surface pro"){
-        toAdd = surfacepro;
-      }
-      // else if (search.term == "macbook" || search.term == "Macbook"){
-      //   toAdd = macbook;
-      // }
-      else {
-        toAdd = macbook;
-      }
+      var req = {
+        method: 'POST',
+        url: 'https://saleshunt-api.herokuapp.com/itemSearch',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          "Keyword": search.term
+        }
+      };
 
-      for (i = 0; i < toAdd.length; ++i) {
-        items.push(toAdd[i]);
-      }
+      $http(req).then(function successCallback(response) {
+        console.log(response);
+        // this callback will be called asynchronously
+        // when the response is available
+        items.splice(0,items.length);
+        var toAdd = response.data;
+        for (i = 0; i < toAdd.length; ++i) {
+          items.push(toAdd[i]);
+        }
+      }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+      });
+
       //call api.then update items
       //items.clear()
       //for results, items.push(result)
