@@ -3,7 +3,7 @@
     <ion-list>
       <ion-item dclass="item-remove-animate item-text-wrap padding secondary-bg" ng-repeat="item in items track by item.ASIN[0]" href="#/tab/tracklist/{{item.ASIN[0]}}" class="item-thumbnail-left card">
         
-        <img ng-src="{{item.SmallImage[0].URL[0]}}" style="width: 100%;height: inherit;">
+        <img ng-src="{{getPic(item)}}" style="width: 100%;height: inherit;">
     
         <h3>{{item.ItemAttributes[0].Brand[0]}}</h3>
         <p>{{item.ItemAttributes[0].Title[0]}}</p>

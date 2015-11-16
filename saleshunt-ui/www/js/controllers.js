@@ -28,6 +28,14 @@ angular.module('starter.controllers', [])
   $scope.remove = function(item) {
     SearchSvc.remove(item);
   };
+  $scope.getPic = function(item) {
+    if(item.hasOwnProperty('MediumImage')) {
+      return item.MediumImage[0].URL[0];
+    }
+    else {
+      return item.ImageSets[0].ImageSet[0].MediumImage[0].URL[0];
+    }
+  };
   $scope.submit = function(){
     if ($scope.search.term === '') {
       return;
@@ -44,6 +52,14 @@ angular.module('starter.controllers', [])
 .controller('ResultsDetailCtrl', function($scope, $state, $stateParams, SearchSvc, TrackSvc) {
   $scope.item = SearchSvc.get($stateParams.searchId);
   $scope.trackButton=true;
+  $scope.getPic = function(item) {
+    if(item.hasOwnProperty('LargeImage')) {
+      return item.LargeImage[0].URL[0];
+    }
+    else {
+      return item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
+    }
+  };
   $scope.addToList = function(item) {
     TrackSvc.add(item);
     $state.go('tab.results');
@@ -59,7 +75,14 @@ angular.module('starter.controllers', [])
   $scope.$on('$ionicView.enter', function(e) {
      $scope.items = TrackSvc.all();
   });
-
+  $scope.getPic = function(item) {
+    if(item.hasOwnProperty('SmallImage')) {
+      return item.SmallImage[0].URL[0];
+    }
+    else {
+      return item.ImageSets[0].ImageSet[0].SmallImage[0].URL[0];
+    }
+  };
   $scope.items = TrackSvc.all();
   $scope.remove = function(item) {
     TrackSvc.remove(item);
@@ -72,6 +95,14 @@ angular.module('starter.controllers', [])
   $scope.addToList = function(item) {
     TrackSvc.add(item);
     $state.go('tab.tracklist');
+  };
+  $scope.getPic = function(item) {
+    if(item.hasOwnProperty('LargeImage')) {
+      return item.LargeImage[0].URL[0];
+    }
+    else {
+      return item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
+    }
   };
   $scope.remove = function(item) {
     TrackSvc.remove(item);
