@@ -62,7 +62,7 @@ angular.module('starter.controllers', [])
   };
   $scope.addToList = function(item) {
     TrackSvc.add(item);
-    $state.go('tab.results');
+    $state.go('tab.tracklist');
   };
 })
 

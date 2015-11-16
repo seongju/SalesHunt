@@ -75,6 +75,8 @@ angular.module('starter.services', [])
       return search;
     },
     setTerm: function(inTerm) {
+      temp = items;
+      items.splice(0,items.length);
       search.Keywords = inTerm;
       var req = {
         method: 'POST',
@@ -90,12 +92,13 @@ angular.module('starter.services', [])
       $http(req).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
-        items.splice(0,items.length);
+        
         var toAdd = response.data;
         for (i = 0; i < toAdd.length; ++i) {
           items.push(toAdd[i]);
         }
       }, function errorCallback(response) {
+        alert("There was an error searching. Please check your network connection.")
         // called asynchronously if an error occurs
         // or server returns response with an error status.
       });
