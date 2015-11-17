@@ -1,4 +1,4 @@
-<ion-view view-title="Results">
+<ion-view view-title="{{search.term}}">
   <ion-content>
     <div class="bar bar-header item-input-inset">
       <form ng-submit="submit()">
@@ -11,28 +11,28 @@
       </form>
     </div>
     <ion-list>
-      <div class="row row-center bggray-bg" ng-repeat="item in items track by item.Item" ng-if="$even">
+      <div class="row row-center bggray-bg" ng-repeat="item in items track by item.ASIN[0]" ng-if="$even">
         <div class="col">
           <div class="card secondary-bg"  ng-click="viewItem(item)" style="margin: 2px 2px;">
             <div class="item item-image">
-              <img ng-src="{{item.MediumImage[0].URL[0]}}" style="max-height:100px;width:auto;">
+              <img ng-src="{{getPic(item)}}" style="max-height:100px;width:auto;">
             </div>
             <div class="item secondary-bg">
               <h3>{{item.ItemAttributes[0].Brand[0]}}</h3>
               <h4 class="shgray" style="line-height: 1.5;height: 3em;white-space: normal;">{{item.ItemAttributes[0].Title[0]}}</h4>
-              <h3>{{item.ListPrice[0].FormattedPrice[0]}}</h3>
+              <h3>{{item.ItemAttributes[0].ListPrice[0].FormattedPrice[0]}}</h3>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card secondary-bg"  ng-click="viewItem(items[item.Item+1])" style="margin: 1px 1px;">
+          <div class="card secondary-bg"  ng-click="viewItem(items[$index+1])" style="margin: 1px 1px;">
             <div class="item item-image">
-              <img ng-src="{{items[item.Item+1].MediumImage[0].URL[0]}}" style="max-height:100px;width:auto;">
+              <img ng-src="{{getPic(items[$index+1])}}" style="max-height:100px;width:auto;">
             </div>
             <div class="item secondary-bg">
-              <h3>{{items[item.Item+1].ItemAttributes[0].Brand[0]}}</h3>
-              <h4 class="shgray" style="line-height: 1.5;height: 3em;white-space: normal;">{{items[item.Item+1].ItemAttributes[0].Title[0]}}</h4>
-              <h3>{{items[item.Item+1].ListPrice[0].FormattedPrice[0]}}</h3>
+              <h3>{{items[$index+1].ItemAttributes[0].Brand[0]}}</h3>
+              <h4 class="shgray" style="line-height: 1.5;height: 3em;white-space: normal;">{{items[$index+1].ItemAttributes[0].Title[0]}}</h4>
+              <h3>{{items[$index+1].ItemAttributes[0].ListPrice[0].FormattedPrice[0]}}</h3>
             </div>
           </div>
         </div>

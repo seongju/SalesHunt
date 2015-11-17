@@ -1,2 +1,4 @@
 amazonAPIHeroku/.env
 amazon-product-api/
+
+*.log
