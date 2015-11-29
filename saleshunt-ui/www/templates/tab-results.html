@@ -10,8 +10,16 @@
         </label>
       </form>
     </div>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        <p>Sort</p>
+      </div>
+      <select ng-model="sort" ng-change="sortItems(sort)" ng-options="sort as sort.name for sort in sortOptions">
+      </select>
+    </label>
     <ion-list>
-      <div class="row row-center bggray-bg" ng-repeat="item in items track by item.ASIN[0]" ng-if="$even">
+    <!-- ItemAttributes[0].ListPrice[0].Amount[0] -->
+      <div class="row row-center bggray-bg" ng-repeat="item in items" ng-if="$even">
         <div class="col">
           <div class="card secondary-bg"  ng-click="viewItem(item)" style="margin: 2px 2px;">
             <div class="item item-image">

@@ -55,7 +55,48 @@ angular.module('starter.services', [])
   var search= {
     term: ''
   };
+  var sort = {};
   var items = [];
+  function sortItems(_sort) {
+    sort = _sort;
+    if  (sort.id == 1) {
+      items.sort(priceDescSort);
+    }
+    else if (sort.id == 2) {
+      items.sort(priceAscSort);
+    }
+    else {
+      items.sort(defaultSort);
+    }
+  }
+  function defaultSort(a,b) {
+    return a.itemId - b.itemId;
+  }
+  function priceDescSort(a,b) {
+    return a.ItemAttributes[0].ListPrice[0].Amount[0] - b.ItemAttributes[0].ListPrice[0].Amount[0];
+  }
+  function priceAscSort(a,b) {
+    return b.ItemAttributes[0].ListPrice[0].Amount[0] - a.ItemAttributes[0].ListPrice[0].Amount[0];
+  }
+  function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+    var toAdd = response.data;
+    for (i = 0; i < toAdd.length; ++i) {
+      toAdd[i].itemId = i;
+      //add data for list price
+      //this will affect sort order, but it makes it work
+      if (toAdd[i].ItemAttributes[0].ListPrice === undefined) {
+        toAdd[i].ItemAttributes[0].ListPrice =[
+        { Amount: [ '0' ],
+          CurrencyCode: [ 'USD' ],
+          FormattedPrice: [ 'Price Data Unavailable' ] }
+          ];
+      }
+      items.push(toAdd[i]);
+    }
+    sortItems(sort);
+  }
   return {
     all: function() {
       return items;
@@ -71,10 +112,12 @@ angular.module('starter.services', [])
       }
       return null;
     },
+    sortItems: sortItems,
     getTerm: function() {
       return search;
     },
-    setTerm: function(inTerm) {
+    setTerm: function(inTerm, _sort) {
+      sort = _sort;
       temp = items;
       items.splice(0,items.length);
       search.Keywords = inTerm;
@@ -89,23 +132,12 @@ angular.module('starter.services', [])
         }
       };
 
-      $http(req).then(function successCallback(response) {
-        // this callback will be called asynchronously
-        // when the response is available
-        
-        var toAdd = response.data;
-        for (i = 0; i < toAdd.length; ++i) {
-          items.push(toAdd[i]);
-        }
-      }, function errorCallback(response) {
-        alert("There was an error searching. Please check your network connection.")
+      $http(req).then(successCallback,
+        function errorCallback(response) {
+        alert("There was an error searching. Please check your network connection.");
         // called asynchronously if an error occurs
         // or server returns response with an error status.
       });
-
-      //call api.then update items
-      //items.clear()
-      //for results, items.push(result)
       return null;
     }
   };

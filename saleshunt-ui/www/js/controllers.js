@@ -7,7 +7,7 @@ angular.module('starter.controllers', [])
     if ($scope.search.term === '') {
       return;
     }
-    SearchSvc.setTerm($scope.search.term);
+    SearchSvc.setTerm($scope.search.term, {});
     $state.go('tab.results');
   };
 })
@@ -22,6 +22,26 @@ angular.module('starter.controllers', [])
   //});
   $scope.search = SearchSvc.getTerm();
   $scope.items = SearchSvc.all();
+
+  $scope.sortOptions = [
+    {
+      id: 0,
+      name: 'Relevance (Defualt)'
+    },
+    {
+      id: 1,
+      name: "Price: Low to High"
+    },
+    {
+      id: 2,
+      name: "Price: High to Low"
+    }
+  ];
+  $scope.sort = $scope.sortOptions[0];
+  $scope.sortItems = function(sort) {
+    $scope.sort = sort;
+    SearchSvc.sortItems(sort);
+  };
   $scope.viewItem = function(item) {
     $state.go('tab.resultsDetail',{searchId: item.ASIN[0]});
   };
@@ -40,7 +60,7 @@ angular.module('starter.controllers', [])
     if ($scope.search.term === '') {
       return;
     }
-    SearchSvc.setTerm($scope.search.term);
+    SearchSvc.setTerm($scope.search.term, $scope.sort);
     $state.go($state.current, {}, {reload: true});
     //$state.go('tab.results');
   };
