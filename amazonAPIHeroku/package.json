@@ -10,7 +10,8 @@
     "express": "~4.13.3",
     "xml2js": "0.4.15",
     "body-parser": "~1.14.1",
-    "request": "~2.65.0"
+    "request": "~2.65.0",
+	"parse": "1.6.9"
   },
   "engines": {
     "node": "4.0.0"

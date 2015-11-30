@@ -7,8 +7,8 @@ var client = amazon.createClient({
 });
 
 client.itemSearch({
-  Keywords: 'Surface Pro',
-  responseGroup: 'ItemAttributes,Images'
+  Keywords: 'Olympus OM-D E-M5 Mark 2',
+  responseGroup: 'OfferSummary'
 }, function(err, results) {
   if (err) {
     console.log(err);
@@ -16,20 +16,11 @@ client.itemSearch({
 	for (var i = 0; i < results.length; i++){
 		console.log("-----------------------------------------------------");
 		console.log("Item: " + i);
+		console.log(results[i]);
 		console.log("ASIN:");
 		console.log(results[i]['ASIN']);
-		console.log("ListPrice:");
-		console.log(results[i]['ItemAttributes'][0]['ListPrice']);
-		console.log("DetailPageURL:");
-		console.log(results[i]['DetailPageURL']);
-		console.log("SmallImage:");
-		console.log(results[i]['SmallImage']);
-		console.log("MediumImage:");
-		console.log(results[i]['MediumImage']);
-		console.log("LargeImage:");
-		console.log(results[i]['LargeImage']);
-		console.log("ItemAttributes:");
-		console.log(results[i]['ItemAttributes']);
+		console.log("LowestNewPrice:");
+		console.log(results[i]['OfferSummary'][0]['LowestNewPrice']);
 		console.log("-----------------------------------------------------");
 	}
   }
