@@ -47,12 +47,50 @@ app.post('/itemSearch', function(req, res, next) {
 	});
 });
 
-app.post('/testParse', function(req, res){
-	var query = new Parse.Query(Parse.User);
-	query.equalTo("username", "Bob");
-	query.find({
-		success: function(users){
-			res.status(200).send(users);
+app.post('/removeItem', function(req, res){
+	var ASIN = req.body.ASIN;
+	var username = req.body.username;
+
+	var user_query = new Parse.Query(Parse.User);
+	
+	user_query.equalTo("username", username);
+	user_query.first({
+		success: function(user){
+			console.log(user);
+
+			var userItem = Parse.Object.extend("User_Items");
+			var items_query = new Parse.Query(userItem);
+			
+			items_query.equalTo("user", user);
+			items_query.equalTo("ASIN", ASIN);
+
+			items_query.first({
+				success: function(item){
+					if(typeof item === "undefined"){
+						res.status(400).send();
+					}
+					else{
+						item.destroy({
+							success: function(){
+								res.status(200).send();
+							},
+							error: function(){
+								res.status(400).send();
+							}
+						});
+					}
+				},
+				error: function(object, error){
+					res.status(400).send();
+				}
+			});			
+		},
+		error: function(){
+			res.status(400).send();
 		}
 	});
+});
+
+app.post('/addItem', function(req, res){
+
 });
