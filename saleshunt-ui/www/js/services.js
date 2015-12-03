@@ -11,31 +11,84 @@ angular.module('starter.services', [])
   };
 }])
 
-.factory('TrackSvc', ['$localstorage','$q', function($localstorage, $q) {
+.factory('TrackSvc', ['$localstorage','$q', '$http', function($localstorage, $q, $http) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
   var tracks = $localstorage.getObject('tracklist');
+  var username = "Bob";
   return {
     all: function() {
       return tracks;
     },
     remove: function(item) {
-      tracks.splice(tracks.indexOf(item), 1);
-      $localstorage.setObject('tracklist', tracks);
+      var req = {
+        method: 'POST',
+        url: 'https://saleshunt-api.herokuapp.com/removeItem',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data:
+        {
+          "username": username,
+          "ASIN": item.ASIN[0]
+        }
+      };
+
+      $http(req).then(
+        function successCallback(response) {
+          tracks.splice(tracks.indexOf(item), 1);
+          $localstorage.setObject('tracklist', tracks);
+          alert("The item was removed from your tracklist.");
+        },
+        function errorCallback(response) {
+          alert("There was an error removing the item. Please check your network connection.");
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+      });
     },
     add: function(item) {
       for (i = 0; i < tracks.length; ++i) {
         if (tracks[i].ASIN[0] == item.ASIN[0]) {
-          //alert('You\'re already tracking this item!');
+          alert('You\'re already tracking this item!');
           return;
         }
       }
-      var clone = JSON.parse(JSON.stringify(item));
-      
-      tracks.push(clone);
+      var req = {
+        method: 'POST',
+        url: 'https://saleshunt-api.herokuapp.com/addItem',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data:
+        {
+          "username": username,
+          "item": {
+            "ASIN": item.ASIN[0],
+            "brand": item.ItemAttributes[0].Brand[0],
+            "lastPriceAmount": item.ItemAttributes[0].ListPrice[0].Amount[0],
+            "lastPriceFormatted": item.ItemAttributes[0].ListPrice[0].FormattedPrice[0],
+            "pictureLink": item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0],
+            "setPriceAmount": item.ItemAttributes[0].ListPrice[0].Amount[0],
+            "setPriceFormatted": item.ItemAttributes[0].ListPrice[0].FormattedPrice[0],
+            "title": item.ItemAttributes[0].Title[0]
+          }
+       }
 
-      $localstorage.setObject('tracklist', tracks);
+      };
+
+      $http(req).then(
+        function successCallback(response) {
+          var clone = JSON.parse(JSON.stringify(item));
+          tracks.push(clone);
+          $localstorage.setObject('tracklist', tracks);
+          alert("The item was added to your tracklist! We'll notify you when the price drops!");
+        },
+        function errorCallback(response) {
+          alert("There was an error adding the item. Please check your network connection.");
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+      });
     },
     get: function(trackId) {
       for (var i = 0; i < tracks.length; i++) {

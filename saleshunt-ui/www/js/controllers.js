@@ -96,11 +96,11 @@ angular.module('starter.controllers', [])
      $scope.items = TrackSvc.all();
   });
   $scope.getPic = function(item) {
-    if(item.hasOwnProperty('SmallImage')) {
-      return item.SmallImage[0].URL[0];
+    if(item.hasOwnProperty('LargeImage')) {
+      return item.LargeImage[0].URL[0];
     }
     else {
-      return item.ImageSets[0].ImageSet[0].SmallImage[0].URL[0];
+      return item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
     }
   };
   $scope.items = TrackSvc.all();
