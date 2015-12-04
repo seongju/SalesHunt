@@ -11,7 +11,7 @@ angular.module('starter.services', [])
   };
 }])
 
-.factory('TrackSvc', ['$localstorage','$q', '$http', function($localstorage, $q, $http) {
+.factory('TrackSvc', ['$localstorage','$q', '$http', '$state', function($localstorage, $q, $http, $state) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -21,7 +21,7 @@ angular.module('starter.services', [])
     all: function() {
       return tracks;
     },
-    remove: function(item) {
+    remove: function(item, successAlert, errorAlert) {
       var req = {
         method: 'POST',
         url: 'https://saleshunt-api.herokuapp.com/removeItem',
@@ -39,15 +39,17 @@ angular.module('starter.services', [])
         function successCallback(response) {
           tracks.splice(tracks.indexOf(item), 1);
           $localstorage.setObject('tracklist', tracks);
-          alert("The item was removed from your tracklist.");
+          successAlert();
+          //alert("The item was removed from your tracklist.");
         },
         function errorCallback(response) {
-          alert("There was an error removing the item. Please check your network connection.");
+          errorAlert();
+          //alert("There was an error removing the item. Please check your network connection.");
           // called asynchronously if an error occurs
           // or server returns response with an error status.
       });
     },
-    add: function(item) {
+    add: function(item, successAlert, errorAlert) {
       for (i = 0; i < tracks.length; ++i) {
         if (tracks[i].ASIN[0] == item.ASIN[0]) {
           alert('You\'re already tracking this item!');
@@ -82,10 +84,11 @@ angular.module('starter.services', [])
           var clone = JSON.parse(JSON.stringify(item));
           tracks.push(clone);
           $localstorage.setObject('tracklist', tracks);
-          alert("The item was added to your tracklist! We'll notify you when the price drops!");
+          successAlert();
         },
         function errorCallback(response) {
-          alert("There was an error adding the item. Please check your network connection.");
+          errorAlert();
+          //alert("There was an error adding the item. Please check your network connection.");
           // called asynchronously if an error occurs
           // or server returns response with an error status.
       });

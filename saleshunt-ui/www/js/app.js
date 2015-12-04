@@ -11,7 +11,6 @@ angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.ser
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-    
     /* external */
     pushNotification = window.plugins.pushNotification;
     
@@ -54,7 +53,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.ser
     };
 
     window.errorHandler = function(error){
-      alert('an error occured');
+      //alert('an error occured');
     }
 
     pushNotification.register(
@@ -132,10 +131,6 @@ angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.ser
 
 
 .config(function($stateProvider, $urlRouterProvider) {
-
-
-  
-
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
