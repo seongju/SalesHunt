@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['starter.keys'])
 
 .factory('$localstorage', ['$window','$q', function($window, $q) {
   return {
@@ -11,17 +11,67 @@ angular.module('starter.services', [])
   };
 }])
 
+.factory('LoginSvc', ['$http', 'KeySvc', 'TrackSvc', function($http, KeySvc, TrackSvc) {
+  key1 = KeySvc.key1;
+  key2 = KeySvc.key2;
+  Parse.initialize(key1, key2);
+  var isRegistered;
+  
+  var user = Parse.User.current();
+  if (user) {
+    isRegistered = true;
+    // do stuff with the user
+  } else {
+    isRegistered = false;
+    user = new Parse.User();
+  }
+
+  return {
+    getUsername: function() {
+      return user.get('username');
+    },
+    isRegistered: isRegistered,
+    login: function(_user, showSuccessAlert, showErrorAlert) {
+      Parse.User.logIn(_user.username, _user.password, {
+        success: function(user) {
+          // Do stuff after successful login.
+          showSuccessAlert();
+        },
+        error: function(user, error) {
+          // The login failed. Check error to see why
+          showErrorAlert(error.message);
+        }
+      });
+    },
+    signUp: function(_user, showSuccessAlert, showErrorAlert) {
+      user.set("username", _user.username.toLowerCase());
+      user.set("password", _user.password);
+      user.set("phoneNumber", _user.phoneNumber);
+      user.signUp(null, {
+        success: function(user) {
+          // Hooray! Let them use the app now.
+          showSuccessAlert();
+        },
+        error: function(user, error) {
+          // Show the error message somewhere and let the user try again.
+          showErrorAlert(error.message);
+          //console.log("Error: " + error.code + " " + error.message);
+        }
+      });
+    }
+  };
+}])
+
 .factory('TrackSvc', ['$localstorage','$q', '$http', '$state', function($localstorage, $q, $http, $state) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
   var tracks = $localstorage.getObject('tracklist');
-  var username = "Bob";
   return {
     all: function() {
       return tracks;
     },
-    remove: function(item, successAlert, errorAlert) {
+    remove: function(item, _username, successAlert, errorAlert) {
       var req = {
         method: 'POST',
         url: 'https://saleshunt-api.herokuapp.com/removeItem',
@@ -30,7 +80,7 @@ angular.module('starter.services', [])
         },
         data:
         {
-          "username": username,
+          "username": _username,
           "ASIN": item.ASIN[0]
         }
       };
@@ -49,7 +99,7 @@ angular.module('starter.services', [])
           // or server returns response with an error status.
       });
     },
-    add: function(item, successAlert, errorAlert) {
+    add: function(item, _username,successAlert, errorAlert) {
       for (i = 0; i < tracks.length; ++i) {
         if (tracks[i].ASIN[0] == item.ASIN[0]) {
           alert('You\'re already tracking this item!');
@@ -64,7 +114,7 @@ angular.module('starter.services', [])
         },
         data:
         {
-          "username": username,
+          "username": _username,
           "item": {
             "ASIN": item.ASIN[0],
             "brand": item.ItemAttributes[0].Brand[0],
@@ -143,11 +193,12 @@ angular.module('starter.services', [])
       //add data for list price
       //this will affect sort order, but it makes it work
       if (toAdd[i].ItemAttributes[0].ListPrice === undefined) {
-        toAdd[i].ItemAttributes[0].ListPrice =[
-        { Amount: [ '0' ],
-          CurrencyCode: [ 'USD' ],
-          FormattedPrice: [ 'Price Data Unavailable' ] }
-          ];
+        continue;
+        // toAdd[i].ItemAttributes[0].ListPrice =[
+        // { Amount: [ '0' ],
+        //   CurrencyCode: [ 'USD' ],
+        //   FormattedPrice: [ 'Price Data Unavailable' ] }
+        //   ];
       }
       items.push(toAdd[i]);
     }

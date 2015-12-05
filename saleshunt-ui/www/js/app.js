@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 // API_KEY: AIzaSyAi37LkflJ-QKBm0WW6UKLvZ_CA68e7yZk
 
-angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.service.push', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.service.push', 'starter.controllers', 'starter.services', 'starter.keys'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -54,7 +54,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.ser
 
     window.errorHandler = function(error){
       //alert('an error occured');
-    }
+    };
 
     pushNotification.register(
       onNotification,
@@ -93,7 +93,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.ser
          "android": {
            "iconColor": "#343434"
          }
-      } 
+      }
     });
     // this will give you a fresh user or the previously saved 'current user'
     var user = Ionic.User.current();
@@ -109,7 +109,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.ser
       user.addPushToken(pushToken.token);
       user.set('token', pushToken.token);
       user.save(); // you NEED to call a save after you add the token
-    }
+    };
 
     push.register(callback);
 
@@ -137,29 +137,37 @@ angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.ser
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
+  .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+    })
+
   .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
 
+  
+
+
   // Each tab has its own nav history stack:
-  .state('tab.search', {
-      url: '/search',
-      views: {
-        'tab-search': {
-          templateUrl: 'templates/tab-search.html',
-          controller: 'SearchCtrl'
-        }
-      }
-    })
     .state('tab.results', {
       url: '/results',
       views: {
         'tab-search': {
           templateUrl: 'templates/tab-results.html',
           controller: 'ResultsCtrl'
+        }
+      }
+    })
+    .state('tab.search', {
+      url: '/search',
+      views: {
+        'tab-search': {
+          templateUrl: 'templates/tab-search.html',
+          controller: 'SearchCtrl'
         }
       }
     })
@@ -193,6 +201,6 @@ angular.module('starter', ['ionic','ionic.service.core', 'ngCordova', 'ionic.ser
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/search');
+  $urlRouterProvider.otherwise('/login');
 
 });

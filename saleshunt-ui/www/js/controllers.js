@@ -1,5 +1,77 @@
+
 angular.module('starter.controllers', [])
 
+.controller('LoginCtrl', function($scope, $state, $rootScope, $ionicPopup, LoginSvc) {
+  $scope.user = {
+    username: null,
+    password: null,
+    phoneNumber:null,
+    inputPhoneNumber: null
+  };
+  if(LoginSvc.isRegistered) {
+    $rootScope.username = LoginSvc.getUsername();
+    $state.go('tab.search');
+  }
+  $scope.isRegistered = true;
+  $scope.switchMode = function(mode) {
+    $scope.isRegistered = mode;
+  };
+  $scope.loginSuccessAlert = function() {
+    $rootScope.username = LoginSvc.getUsername();
+    $state.go('tab.search');
+  };
+  $scope.loginErrorAlert = function(errorMessage) {
+    var alertPopup = $ionicPopup.alert({
+    title: 'Oops, something went wrong',
+    template: errorMessage
+    });
+    alertPopup.then(function(res) {
+      //$state.go('tab.tracklist');
+    });
+  };
+  $scope.login = function() {
+    LoginSvc.login($scope.user, $scope.loginSuccessAlert, $scope.loginErrorAlert);
+  };
+  $scope.signUpSuccessAlert = function() {
+    var alertPopup = $ionicPopup.alert({
+    title: 'Account Created',
+    template: 'You can now search for products and track them'
+    });
+    alertPopup.then(function(res) {
+      $state.go('tab.search');
+    });
+  };
+  $scope.signUpErrorAlert = function(errorMessage) {
+    var alertPopup = $ionicPopup.alert({
+    title: 'Oops, something went wrong',
+    template: errorMessage
+    });
+    alertPopup.then(function(res) {
+      //$state.go('tab.tracklist');
+
+    });
+  };
+  $scope.submit = function(){
+    var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;
+    if($scope.user.inputPhoneNumber.match(phoneno))
+    {
+      $scope.user.phoneNumber = "+1" + $scope.user.inputPhoneNumber.slice(0,3) + $scope.user.inputPhoneNumber.slice(4,7) + $scope.user.inputPhoneNumber.slice(8,12);
+      LoginSvc.signUp($scope.user, $scope.signUpSuccessAlert, $scope.signUpErrorAlert);
+    }
+    else
+    {
+      var alertPopup = $ionicPopup.alert({
+      title: 'Invalid Phone Number',
+      template: 'Please use the form xxx-xxx-xxxx'
+      });
+      alertPopup.then(function(res) {
+        $scope.user.inputPhoneNumber = null;
+      });
+    }
+    
+    //$state.go('tab.search');
+  };
+})
 
 .controller('SearchCtrl', function($scope, $state, $rootScope, SearchSvc) {
   $scope.search = SearchSvc.getTerm();
@@ -69,7 +141,7 @@ angular.module('starter.controllers', [])
   // };
 })
 
-.controller('ResultsDetailCtrl', function($scope, $state, $stateParams, $ionicPopup, SearchSvc, TrackSvc) {
+.controller('ResultsDetailCtrl', function($scope, $state, $stateParams, $rootScope, $ionicPopup, SearchSvc, TrackSvc) {
   var Ctrl = this;
   $scope.item = SearchSvc.get($stateParams.searchId);
   $scope.trackButton=true;
@@ -89,7 +161,6 @@ angular.module('starter.controllers', [])
     });
     alertPopup.then(function(res) {
       $state.go('tab.tracklist');
-      console.log('popup closed');
     });
   };
   $scope.showErrorAlert = function() {
@@ -99,15 +170,14 @@ angular.module('starter.controllers', [])
     });
     alertPopup.then(function(res) {
       //$state.go('tab.tracklist');
-      console.log('popup closed');
     });
   };
   $scope.addToList = function(item) {
-    TrackSvc.add(item, $scope.showSuccessAlert, $scope.showErrorAlert);
+    TrackSvc.add(item, $rootScope.username,$scope.showSuccessAlert, $scope.showErrorAlert);
   };
 })
 
-.controller('TracklistCtrl', function($scope, $ionicPopup, TrackSvc) {
+.controller('TracklistCtrl', function($scope, $ionicPopup, $rootScope, TrackSvc) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -132,7 +202,6 @@ angular.module('starter.controllers', [])
     });
     alertPopup.then(function(res) {
       //$state.go('tab.tracklist');
-      console.log('popup closed');
     });
   };
   $scope.showErrorAlert = function() {
@@ -142,15 +211,14 @@ angular.module('starter.controllers', [])
     });
     alertPopup.then(function(res) {
       //$state.go('tab.tracklist');
-      console.log('popup closed');
     });
   };
   $scope.remove = function(item) {
-    TrackSvc.remove(item, $scope.showSuccessAlert, $scope.showErrorAlert);
+    TrackSvc.remove(item, $rootScope.username, $scope.showSuccessAlert, $scope.showErrorAlert);
   };
 })
 
-.controller('TracklistDetailCtrl', function($scope, $state, $stateParams, $ionicPopup, TrackSvc) {
+.controller('TracklistDetailCtrl', function($scope, $state, $rootScope,$stateParams, $ionicPopup, TrackSvc) {
   $scope.item = TrackSvc.get($stateParams.itemId);
   $scope.trackButton=false;
   $scope.addToList = function(item) {
@@ -172,7 +240,6 @@ angular.module('starter.controllers', [])
     });
     alertPopup.then(function(res) {
       $state.go('tab.tracklist');
-      console.log('popup closed');
     });
   };
   $scope.showErrorAlert = function() {
@@ -182,15 +249,10 @@ angular.module('starter.controllers', [])
     });
     alertPopup.then(function(res) {
       //$state.go('tab.tracklist');
-      console.log('popup closed');
     });
   };
   $scope.remove = function(item) {
-    TrackSvc.remove(item, $scope.showSuccessAlert, $scope.showErrorAlert);
+    TrackSvc.remove(item, $rootScope.username, $scope.showSuccessAlert, $scope.showErrorAlert);
     //$state.go('tab.tracklist');
   };
-})
-
-
-
-;
+});
