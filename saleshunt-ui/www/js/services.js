@@ -11,7 +11,7 @@ angular.module('starter.services', ['starter.keys'])
   };
 }])
 
-.factory('LoginSvc', ['$http', 'KeySvc', 'TrackSvc', function($http, KeySvc, TrackSvc) {
+.factory('LoginSvc', ['$http', 'KeySvc', function($http, KeySvc) {
   key1 = KeySvc.key1;
   key2 = KeySvc.key2;
   Parse.initialize(key1, key2);
@@ -33,7 +33,9 @@ angular.module('starter.services', ['starter.keys'])
     isRegistered: isRegistered,
     login: function(_user, showSuccessAlert, showErrorAlert) {
       Parse.User.logIn(_user.username, _user.password, {
-        success: function(user) {
+        success: function(_user) {
+          user = _user;
+          console.log(user.get('username'));
           // Do stuff after successful login.
           showSuccessAlert();
         },
@@ -62,7 +64,7 @@ angular.module('starter.services', ['starter.keys'])
   };
 }])
 
-.factory('TrackSvc', ['$localstorage','$q', '$http', '$state', function($localstorage, $q, $http, $state) {
+.factory('TrackSvc',['$localstorage','$q', '$http', '$state','LoginSvc', function($localstorage, $q, $http, $state,LoginSvc) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -80,7 +82,7 @@ angular.module('starter.services', ['starter.keys'])
         },
         data:
         {
-          "username": _username,
+          "username": LoginSvc.getUsername(),
           "ASIN": item.ASIN[0]
         }
       };
@@ -114,16 +116,17 @@ angular.module('starter.services', ['starter.keys'])
         },
         data:
         {
-          "username": _username,
+          "username": LoginSvc.getUsername(),
           "item": {
             "ASIN": item.ASIN[0],
             "brand": item.ItemAttributes[0].Brand[0],
-            "lastPriceAmount": item.ItemAttributes[0].ListPrice[0].Amount[0],
-            "lastPriceFormatted": item.ItemAttributes[0].ListPrice[0].FormattedPrice[0],
+            "lastPriceAmount": item.OfferSummary[0].LowestNewPrice[0].Amount[0],
+            "lastPriceFormatted": item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0],
             "pictureLink": item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0],
-            "setPriceAmount": item.ItemAttributes[0].ListPrice[0].Amount[0],
-            "setPriceFormatted": item.ItemAttributes[0].ListPrice[0].FormattedPrice[0],
-            "title": item.ItemAttributes[0].Title[0]
+            "setPriceAmount": item.OfferSummary[0].LowestNewPrice[0].Amount[0],
+            "setPriceFormatted": item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0],
+            "title": item.ItemAttributes[0].Title[0],
+            "itemURL": item.DetailPageURL[0]
           }
        }
 
@@ -179,10 +182,10 @@ angular.module('starter.services', ['starter.keys'])
     return a.itemId - b.itemId;
   }
   function priceDescSort(a,b) {
-    return a.ItemAttributes[0].ListPrice[0].Amount[0] - b.ItemAttributes[0].ListPrice[0].Amount[0];
+    return a.OfferSummary[0].LowestNewPrice[0].Amount[0] - b.OfferSummary[0].LowestNewPrice[0].Amount[0];
   }
   function priceAscSort(a,b) {
-    return b.ItemAttributes[0].ListPrice[0].Amount[0] - a.ItemAttributes[0].ListPrice[0].Amount[0];
+    return b.OfferSummary[0].LowestNewPrice[0].Amount[0] - a.OfferSummary[0].LowestNewPrice[0].Amount[0];
   }
   function successCallback(response) {
     // this callback will be called asynchronously
@@ -192,13 +195,13 @@ angular.module('starter.services', ['starter.keys'])
       toAdd[i].itemId = i;
       //add data for list price
       //this will affect sort order, but it makes it work
-      if (toAdd[i].ItemAttributes[0].ListPrice === undefined) {
-        continue;
-        // toAdd[i].ItemAttributes[0].ListPrice =[
-        // { Amount: [ '0' ],
-        //   CurrencyCode: [ 'USD' ],
-        //   FormattedPrice: [ 'Price Data Unavailable' ] }
-        //   ];
+      if (toAdd[i].OfferSummary[0].LowestNewPrice === undefined) {
+        // continue;
+        toAdd[i].OfferSummary[0].LowestNewPrice =[
+        { Amount: [ '0' ],
+          CurrencyCode: [ 'USD' ],
+          FormattedPrice: [ 'Price Data Unavailable' ] }
+          ];
       }
       items.push(toAdd[i]);
     }

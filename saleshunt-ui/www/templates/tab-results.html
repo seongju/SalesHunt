@@ -18,7 +18,7 @@
       </select>
     </label>
     <ion-list>
-    <!-- ItemAttributes[0].ListPrice[0].Amount[0] -->
+    <!-- OfferSummary[0].LowestNewPrice[0].Amount[0] -->
       <div class="row row-center bggray-bg" ng-repeat="item in items" ng-if="$even">
         <div class="col">
           <div class="card secondary-bg"  ng-click="viewItem(item)" style="margin: 2px 2px;">
@@ -28,7 +28,7 @@
             <div class="item secondary-bg">
               <h3>{{item.ItemAttributes[0].Brand[0]}}</h3>
               <h4 class="shgray" style="line-height: 1.5;height: 3em;white-space: normal;">{{item.ItemAttributes[0].Title[0]}}</h4>
-              <h3>{{item.ItemAttributes[0].ListPrice[0].FormattedPrice[0]}}</h3>
+              <h3>{{item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0]}}</h3>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
             <div class="item secondary-bg">
               <h3>{{items[$index+1].ItemAttributes[0].Brand[0]}}</h3>
               <h4 class="shgray" style="line-height: 1.5;height: 3em;white-space: normal;">{{items[$index+1].ItemAttributes[0].Title[0]}}</h4>
-              <h3>{{items[$index+1].ItemAttributes[0].ListPrice[0].FormattedPrice[0]}}</h3>
+              <h3>{{items[$index+1].OfferSummary[0].LowestNewPrice[0].FormattedPrice[0]}}</h3>
             </div>
           </div>
         </div>

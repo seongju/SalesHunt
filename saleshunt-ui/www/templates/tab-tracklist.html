@@ -7,7 +7,7 @@
     
         <h3>{{item.ItemAttributes[0].Brand[0]}}</h3>
         <p>{{item.ItemAttributes[0].Title[0]}}</p>
-        <h4>Price: {{item.ItemAttributes[0].ListPrice[0].FormattedPrice[0]}}</h3>
+        <h4>Price: {{item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0]}}</h3>
         <ion-option-button class="button-assertive" ng-click="remove(item)">
           Delete
         </ion-option-button>
