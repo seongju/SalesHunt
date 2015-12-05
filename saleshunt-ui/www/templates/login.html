@@ -1,0 +1,32 @@
+<ion-view view-title="Login">
+  <ion-content class="bggray-bg">
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Username</span>
+        <input type="text" ng-model="user.username" placeholder="Userame">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="user.password" placeholder="Password">
+      </label>
+      <label ng-hide="isRegistered" class="item item-input item-floating-label">
+        <span class="input-label">Phone Number</span>
+        <input type="text" ng-model="user.inputPhoneNumber"placeholder="Phone Number e.g. xxx-xxx-xxxx">
+      </label>
+    </div> 
+    <div class="row">
+      <div class="col">
+        <button ng-show="isRegistered"class="padding button button-block icon-left ion-pinpoint button-balanced" ng-click="login()">Login
+        </button>
+        <button ng-hide="isRegistered" class="padding button button-block icon-left ion-pinpoint button-balanced" ng-click="submit()">Create Account
+        </button>
+      </div>
+      <div class="col">
+        <button ng-show="isRegistered" class="padding button button-block icon-left ion-plus button-positive" ng-click="switchMode(false)">New User
+        </button>
+        <button ng-hide="isRegistered" class="padding button button-block icon-left ion-arrow-left-c button-positive" ng-click="switchMode(true)">Current User
+        </button>
+      </div>
+    </div>  
+  </ion-content>
+</ion-view>

@@ -4,5 +4,4 @@
 node_modules/
 platforms/
 plugins/
-www/keys
 www/js/keys.js
