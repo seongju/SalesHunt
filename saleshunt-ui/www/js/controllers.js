@@ -153,6 +153,9 @@ angular.module('starter.controllers', [])
       return item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
     }
   };
+  $scope.buyButton = function(item) {
+    window.open(item.DetailPageURL[0], '_system', 'location=yes'); return false;
+  };
   // An alert dialog
   $scope.showSuccessAlert = function() {
     var alertPopup = $ionicPopup.alert({
@@ -232,6 +235,9 @@ angular.module('starter.controllers', [])
     else {
       return item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
     }
+  };
+  $scope.buyButton = function(item) {
+    window.open(item.DetailPageURL[0], '_system', 'location=yes'); return false;
   };
   $scope.showSuccessAlert = function() {
     var alertPopup = $ionicPopup.alert({
