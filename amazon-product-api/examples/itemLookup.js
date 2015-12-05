@@ -7,7 +7,7 @@ var client = amazon.createClient({
 });
 
 client.itemSearch({
-  Keywords: 'Olympus OM-D E-M5 Mark 2',
+  Keywords: 'B00SD6F53U',
   responseGroup: 'OfferSummary'
 }, function(err, results) {
   if (err) {

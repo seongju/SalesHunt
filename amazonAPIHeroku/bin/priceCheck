@@ -1,0 +1,50 @@
+#! /app/.heroku/node/bin/node
+
+var Parse = require('parse/node').Parse,
+	request = require('request');
+
+Parse.initialize(process.env.APPID, process.env.JSKey);
+
+function priceCheck(){
+	var userItem = Parse.Object.extend("User_Items");
+	var items_query = new Parse.Query(userItem);
+
+	items_query.find({
+		success: function(items){
+			var itemsLength = items.length;
+			for(var i = 0; i < items.length; i++){
+				var item = items[i];
+
+				var keywordBody = {};
+				keywordBody['Keywords'] = item.get("ASIN");
+
+				var contentLength = keywordBody.length;
+
+				request.post({
+					headers: {
+						'Content-Length': contentLength,
+						'Content-Type' : 'application/json'
+					},
+					url: 'https://saleshunt-api.herokuapp.com/itemSearch',
+					json: keywordBody
+				}, function(error, res, results){
+					if(!error){
+						//Get first item in results array because that is the one that has the same ASIN
+						var newPrice = results[0]['OfferSummary'][0]['LowestNewPrice'];
+
+						if(newPrice < item.get("setPriceAmount")){
+							//Notify using twilio
+						}
+					}else{
+					  console.log(error);
+					}
+				});
+			}
+		},
+		error: function(){
+			console.log("Error in finding the items!");
+		}
+	});	
+}
+
+priceCheck();

@@ -34,7 +34,18 @@ var runQuery = function (credentials, method) {
                   cb(respObj.Items[0].Request[0].Errors);
                 } else if (respObj.Items[0].Item) {
                   //Got back an item
-                  cb(null, respObj.Items[0].Item);
+                  items = respObj.Items[0].Item;
+                  var itemsLength = items.length;
+                  for(var i = 0; i < items.length; i++){
+                    var item = items[0];
+                    for(var key in item){
+                      console.log(key);
+                      if(key != "OfferSummary"){
+                        delete item[key];
+                      }
+                    }
+                  }
+                  cb(null, items);
                 }
               } else if (respObj.BrowseNodes && respObj.BrowseNodes.length > 0 && respObj.BrowseNodes[0].BrowseNode) {
                 cb(null, respObj.BrowseNodes[0].BrowseNode);

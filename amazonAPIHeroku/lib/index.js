@@ -27,7 +27,6 @@ var runQuery = function (credentials, method) {
             if (err) {
               cb(err);
             } else {
-              console.log(resp);
               var respObj = resp[method + 'Response'];
               if (respObj.Items && respObj.Items.length > 0) {
                 // Request Error

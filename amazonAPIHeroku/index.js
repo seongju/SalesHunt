@@ -31,7 +31,7 @@ app.post('/itemSearch', function(req, res, next) {
 
 	query = {
 		Keywords: keywords,
-		responseGroup: 'ItemAttributes,Images'
+		responseGroup: 'ItemAttributes,Images,OfferSummary'
 	};
 
 	console.log(query);
@@ -48,6 +48,7 @@ app.post('/itemSearch', function(req, res, next) {
 });
 
 app.post('/removeItem', function(req, res){
+	//TODO require ASIN and username
 	var ASIN = req.body.ASIN;
 	var username = req.body.username;
 
@@ -83,23 +84,27 @@ app.post('/removeItem', function(req, res){
 								res.status(200).send();
 							},
 							error: function(){
-								res.status(400).send();
+								console.log("Parse did not destroy the item");
+								res.status(500).send();
 							}
 						});
 					}
 				},
 				error: function(object, error){
+					console.log("Parse did not accept the query");
 					res.status(400).send();
 				}
 			});			
 		},
 		error: function(){
-			res.status(400).send();
+			console.log("Parse did not accept the query");
+			res.status(500).send();
 		}
 	});
 });
 
 app.post('/addItem', function(req, res){
+	//TODO make sure that there is a username and item['ASIN'] because they make the unique key
 	var username = req.body.username;
 	var item = req.body.item;
 
@@ -134,7 +139,7 @@ app.post('/addItem', function(req, res){
 			//Try to save the new item in Parse
 			newItem.save(null, {
 				success: function(){
-					res.status(200).send();
+					res.status(201).send();
 				},
 				error: function(){
 					console.log("Trouble saving the item");
@@ -143,8 +148,8 @@ app.post('/addItem', function(req, res){
 			});
 		},
 		error: function(){
-			console.log("Bad request for user");
-			res.status(400).send();
+			console.log("Parse did not accept the query");
+			res.status(500).send();
 		}
 	});
 });
