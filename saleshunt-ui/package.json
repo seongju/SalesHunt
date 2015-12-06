@@ -1,7 +1,7 @@
 {
-  "name": "myapp",
+  "name": "SalesHunt",
   "version": "1.0.0",
-  "description": "myApp: An Ionic project",
+  "description": "SalesHunt: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -21,7 +21,7 @@
     }
   ],
   "cordovaPlatforms": [
-    "ios",
-    "android"
+    "android",
+    "ios"
   ]
 }

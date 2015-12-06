@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.myapp189485" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>myApp</name>
+<widget id="com.ionicframework.saleshunt189485" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>SalesHunt</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Price Tracking for Amazon.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="rnbates@umich.edu" href="http://umich.edu">
+      SalesHunt Team
     </author>
   <content src="index.html"/>
   <access origin="*"/>
