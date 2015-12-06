@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
     var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;
     if($scope.user.inputPhoneNumber.match(phoneno))
     {
-      $scope.user.phoneNumber = "+1" + $scope.user.inputPhoneNumber.slice(0,3) + $scope.user.inputPhoneNumber.slice(4,7) + $scope.user.inputPhoneNumber.slice(8,12);
+      $scope.user.phoneNumber = "+1" + $scope.user.inputPhoneNumber.replace(/-/g, "");
       LoginSvc.signUp($scope.user, $scope.signUpSuccessAlert, $scope.signUpErrorAlert);
     }
     else
