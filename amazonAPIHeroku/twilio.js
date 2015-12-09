@@ -11,8 +11,8 @@ var client = require('twilio')(accountSid, authToken);
 client.messages.create({ 
     to: "+17347093816", 
     from: "+17348871363", 
-    body: "This is a test message", 
-    mediaUrl: "http://farm2.static.flickr.com/1075/1404618563_3ed9a44a3a.jpg",  
+    body: "Price drop on: Motorola Moto 360 (2nd Gen.) - Mens 42mm, Black with Black Leather Band\nFrom: $299.99\nTo: $100.00\nLink: http://www.amazon.com/Motorola-Moto-360-2nd-Gen/dp/B016CKGPC8/ref=sr_1_11?ie=UTF8&qid=1449688792&sr=8-11&keywords=motorola+360+42mm+2nd+Generation", 
+    mediaUrl: "http://ecx.images-amazon.com/images/I/41W3Ti5rYxL.jpg",  
 }, function(err, message) { 
     console.log(message.sid); 
 });
